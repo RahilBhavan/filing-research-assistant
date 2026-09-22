@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+sec-corpus/
+.env
+dist/
+build/
+*.egg-info/
+review.csv
+refreshed-sec-corpus/

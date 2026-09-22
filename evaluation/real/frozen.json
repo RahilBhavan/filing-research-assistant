@@ -1,0 +1,11 @@
+{
+  "frozen_at": "2026-09-21T22:48:46.057823+00:00",
+  "label_origin": "agent authored directly from source before retrieval development",
+  "human_independent": false,
+  "files": {
+    "evaluation/real/dev.jsonl": "9f219bf34237bca85265d8ede528c1f62418a7ea01bbbbe21a839ce7e9e9887e",
+    "evaluation/real/heldout.jsonl": "b1087efd0adb234e8f1321a3b117ee3e2ee2be19f8e424ed5593ec6f206a77dc",
+    "corpora/sec/data/manifest.json": "0165b846fc9e95aec52c61ad3f769ed648e26ac0986474e65d4c1468103a26fd",
+    "corpora/sec/data/index.json": "bf45b2fff50de6f0a4f7245ecd7c05e137eab0394e32d1fb069e36b9342254df"
+  }
+}

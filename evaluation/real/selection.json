@@ -1,0 +1,15 @@
+{
+  "selected_method": "bm25",
+  "selected_at": "2026-09-21T22:58:44.802357+00:00",
+  "basis": "Development: BM25 19/20 strict gold-complete answers, 10/10 unsupported abstentions; semantic 12/20, hybrid 16/20. Last BM25 mismatch r37 cites an alternate passage describing digital, direct sales and partners; retain strict miss rather than relabel frozen gold.",
+  "policy": "No engine changes after viewing held-out results. This is an agent-authored held-out split, not an independently administered blind test.",
+  "implementation": {
+    "filing_assistant/research.py": "71cca67bbf8a15adc627d26a6186ad9ce53f6780ddad4fbc241ae80d6d594632",
+    "filing_assistant/retrieval.py": "a05dcc95395a42e868a9b3e15a7767b67ecbe72d74d5b3584fe76574b4e130d7",
+    "filing_assistant/engine.py": "5f3e2006d5407caa29711c8b712515a06067455e19ea4349e3016592886ede5a",
+    "filing_assistant/corpus.py": "b029f0e56f9ed2a8039797ee6eeb7102d2e193b9e022ff9e25a2a255552bf0a3",
+    "filing_assistant/real_eval.py": "05d2e17ff9ca770bd79f61ea3d591f43210d2cd0144380568f7557fd4d271f54",
+    "baselines/v1_engine.py": "5f3e2006d5407caa29711c8b712515a06067455e19ea4349e3016592886ede5a",
+    "corpora/sec/data/semantic.json.gz": "a00c01c5b1fd7540584553bec873a428987202dab3cfff0ec8bb6f8eedcfb212"
+  }
+}

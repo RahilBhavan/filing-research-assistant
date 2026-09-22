@@ -1,0 +1,46 @@
+$ python3 -m filing_assistant list
+SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.
+NSTR | 10-K | report 2025-12-31 | filed 2026-02-20 | fixture-nstr-k | synthetic_fixture
+NSTR | 10-Q | report 2026-03-31 | filed 2026-05-08 | fixture-nstr-q | synthetic_fixture
+HBRM | 10-K | report 2025-09-30 | filed 2025-11-21 | fixture-hbrm-k | synthetic_fixture
+HBRM | 10-Q | report 2025-12-31 | filed 2026-02-06 | fixture-hbrm-q | synthetic_fixture
+
+
+$ python3 -m filing_assistant ask What caused subscription revenue growth? --company NSTR --form 10-K
+SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.
+Selected narrative evidence:
+
+> For the year ended December 31, 2025, subscription revenue grew because existing customers purchased additional user seats. New customer sales also contributed to revenue growth.
+[Northstar Software | 10-K | report 2025-12-31 | filed 2026-02-20 | mda | fixture-nstr-k](file:///Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant/data/raw/nstr-k.html#nstr-k-revenue)
+
+Exact extract only; lexical relevance is heuristic, not human-verified semantic support.
+
+
+$ python3 -m filing_assistant ask For the report period 2025-12-31, what percentage of quarterly revenue did the largest distributor represent? --company HBRM --form 10-Q
+SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.
+Selected narrative evidence:
+
+> The largest distributor represented 27 percent of quarterly revenue for the three months ended December 31, 2025. Annual and quarterly percentages cover different periods.
+[Harbor Manufacturing | 10-Q | report 2025-12-31 | filed 2026-02-06 | mda | fixture-hbrm-q](file:///Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant/data/raw/hbrm-q.html#hbrm-q-concentration)
+
+Exact extract only; lexical relevance is heuristic, not human-verified semantic support.
+
+
+$ python3 -m filing_assistant ask Compare hosting costs between the filings. --company NSTR --compare
+SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.
+Selected narrative evidence by filing; no calculated change:
+
+> Hosting costs increased during 2025 because customers stored more documents. The company also incurred migration expenses while moving workloads to a new cloud region.
+[Northstar Software | 10-K | report 2025-12-31 | filed 2026-02-20 | mda | fixture-nstr-k](file:///Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant/data/raw/nstr-k.html#nstr-k-costs)
+
+> Hosting costs decreased during the quarter because a cloud contract renegotiation lowered storage rates. Migration expenses ended in February 2026.
+[Northstar Software | 10-Q | report 2026-03-31 | filed 2026-05-08 | mda | fixture-nstr-q](file:///Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant/data/raw/nstr-q.html#nstr-q-costs)
+
+Exact extract only; lexical relevance is heuristic, not human-verified semantic support.
+
+
+$ python3 -m filing_assistant ask What was the CEO compensation in cryptocurrency? --company NSTR --form 10-K
+SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.
+I can't establish that from the selected filings. Reason: insufficient_lexical_evidence
+
+Exact extract only; lexical relevance is heuristic, not human-verified semantic support.

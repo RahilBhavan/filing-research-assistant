@@ -1,0 +1,134 @@
+{
+  "python_version": "3.9.6",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "cwd": "/Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant",
+  "commands": [
+    {
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_status": 0,
+      "stdout": "",
+      "stderr": "test_json_is_machine_readable_and_abstention_is_success (test_assistant.CliTests) ... ok\ntest_missing_corpus_is_nonzero (test_assistant.CliTests) ... ok\ntest_accession_from_other_company_rejected (test_assistant.EngineTests) ... ok\ntest_ambiguous_multiple_filings_require_selection (test_assistant.EngineTests) ... ok\ntest_amendment_not_silently_substituted (test_assistant.EngineTests) ... ok\ntest_comparison_quotes_two_distinct_periods (test_assistant.EngineTests) ... ok\ntest_direct_answer_is_exact_and_provenanced (test_assistant.EngineTests) ... ok\ntest_duplicate_accessions_rejected (test_assistant.EngineTests) ... ok\ntest_employee_inflections_share_a_term (test_assistant.EngineTests) ... ok\ntest_empty_search_abstains (test_assistant.EngineTests) ... ok\ntest_explicit_period_conflict_rejected (test_assistant.EngineTests) ... ok\ntest_missing_currency_amount_abstains (test_assistant.EngineTests) ... ok\ntest_missing_topic_abstains (test_assistant.EngineTests) ... ok\ntest_partial_comparison_abstains_without_partial_answer (test_assistant.EngineTests) ... ok\ntest_prediction_abstains (test_assistant.EngineTests) ... ok\ntest_query_does_not_modify_corpus (test_assistant.EngineTests) ... ok\ntest_question_company_conflict_rejected (test_assistant.EngineTests) ... ok\ntest_scope_period_is_report_date_not_filing_date (test_assistant.EngineTests) ... ok\ntest_section_filter_precedes_retrieval (test_assistant.EngineTests) ... ok\ntest_single_document_compare_is_rejected (test_assistant.EngineTests) ... ok\ntest_table_total_is_not_quoted_as_narrative (test_assistant.EngineTests) ... ok\ntest_unknown_company_does_not_fall_back (test_assistant.EngineTests) ... ok\ntest_unsupported_location_cannot_ride_on_related_keywords (test_assistant.EngineTests) ... ok\ntest_year_only_conflict_rejected (test_assistant.EngineTests) ... ok\ntest_changed_question_invalidates_frozen_dataset (test_assistant.EvaluationTests) ... ok\ntest_frozen_dataset_metrics_are_explicit_about_support (test_assistant.EvaluationTests) ... ok\ntest_css_hidden_blocks_excluded (test_assistant.ParserTests) ... ok\ntest_hidden_navigation_script_and_tables_are_excluded (test_assistant.ParserTests) ... ok\ntest_long_paragraph_splitting_preserves_all_words (test_assistant.ParserTests) ... ok\ntest_nested_inline_text_and_entities_survive (test_assistant.ParserTests) ... ok\ntest_path_traversal_rejected (test_assistant.ParserTests) ... ok\ntest_source_hash_mismatch_fails_closed (test_assistant.ParserTests) ... ok\ntest_synthetic_cannot_claim_sec_cik (test_assistant.ParserTests) ... ok\ntest_unknown_top_level_section_ends_narrative_scope (test_assistant.ParserTests) ... ok\ntest_403_does_not_retry_or_change_identity (test_assistant.SecTests) ... ok\ntest_duplicate_cik_spelling_is_rejected (test_assistant.SecTests) ... ok\ntest_existing_destination_is_preserved (test_assistant.SecTests) ... ok\ntest_missing_contact_is_rejected (test_assistant.SecTests) ... ok\ntest_no_subsequent_quarter_is_error (test_assistant.SecTests) ... ok\ntest_selection_obeys_cutoff_and_excludes_amendment (test_assistant.SecTests) ... ok\ntest_unapproved_url_is_rejected (test_assistant.SecTests) ... ok\n\n----------------------------------------------------------------------\nRan 41 tests in 0.052s\n\nOK\n"
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "filing_assistant",
+        "ingest"
+      ],
+      "exit_status": 0,
+      "stdout": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.\n{\n  \"passages\": 39,\n  \"documents\": [\n    {\n      \"document_id\": \"nstr-k\",\n      \"narrative_blocks\": 11,\n      \"omitted_tables\": 1\n    },\n    {\n      \"document_id\": \"nstr-q\",\n      \"narrative_blocks\": 9,\n      \"omitted_tables\": 1\n    },\n    {\n      \"document_id\": \"hbrm-k\",\n      \"narrative_blocks\": 10,\n      \"omitted_tables\": 1\n    },\n    {\n      \"document_id\": \"hbrm-q\",\n      \"narrative_blocks\": 9,\n      \"omitted_tables\": 1\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "filing_assistant",
+        "list"
+      ],
+      "exit_status": 0,
+      "stdout": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.\nNSTR | 10-K | report 2025-12-31 | filed 2026-02-20 | fixture-nstr-k | synthetic_fixture\nNSTR | 10-Q | report 2026-03-31 | filed 2026-05-08 | fixture-nstr-q | synthetic_fixture\nHBRM | 10-K | report 2025-09-30 | filed 2025-11-21 | fixture-hbrm-k | synthetic_fixture\nHBRM | 10-Q | report 2025-12-31 | filed 2026-02-06 | fixture-hbrm-q | synthetic_fixture\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "filing_assistant",
+        "ask",
+        "What caused subscription revenue growth?",
+        "--company",
+        "NSTR",
+        "--form",
+        "10-K"
+      ],
+      "exit_status": 0,
+      "stdout": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.\nSelected narrative evidence:\n\n> For the year ended December 31, 2025, subscription revenue grew because existing customers purchased additional user seats. New customer sales also contributed to revenue growth.\n[Northstar Software | 10-K | report 2025-12-31 | filed 2026-02-20 | mda | fixture-nstr-k](file:///Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant/data/raw/nstr-k.html#nstr-k-revenue)\n\nExact extract only; lexical relevance is heuristic, not human-verified semantic support.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "filing_assistant",
+        "ask",
+        "For the report period 2025-12-31, what percentage of quarterly revenue did the largest distributor represent?",
+        "--company",
+        "HBRM",
+        "--form",
+        "10-Q"
+      ],
+      "exit_status": 0,
+      "stdout": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.\nSelected narrative evidence:\n\n> The largest distributor represented 27 percent of quarterly revenue for the three months ended December 31, 2025. Annual and quarterly percentages cover different periods.\n[Harbor Manufacturing | 10-Q | report 2025-12-31 | filed 2026-02-06 | mda | fixture-hbrm-q](file:///Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant/data/raw/hbrm-q.html#hbrm-q-concentration)\n\nExact extract only; lexical relevance is heuristic, not human-verified semantic support.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "filing_assistant",
+        "ask",
+        "Compare hosting costs between the filings.",
+        "--company",
+        "NSTR",
+        "--compare"
+      ],
+      "exit_status": 0,
+      "stdout": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.\nSelected narrative evidence by filing; no calculated change:\n\n> Hosting costs increased during 2025 because customers stored more documents. The company also incurred migration expenses while moving workloads to a new cloud region.\n[Northstar Software | 10-K | report 2025-12-31 | filed 2026-02-20 | mda | fixture-nstr-k](file:///Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant/data/raw/nstr-k.html#nstr-k-costs)\n\n> Hosting costs decreased during the quarter because a cloud contract renegotiation lowered storage rates. Migration expenses ended in February 2026.\n[Northstar Software | 10-Q | report 2026-03-31 | filed 2026-05-08 | mda | fixture-nstr-q](file:///Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant/data/raw/nstr-q.html#nstr-q-costs)\n\nExact extract only; lexical relevance is heuristic, not human-verified semantic support.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "filing_assistant",
+        "ask",
+        "What was the CEO compensation in cryptocurrency?",
+        "--company",
+        "NSTR",
+        "--form",
+        "10-K"
+      ],
+      "exit_status": 0,
+      "stdout": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.\nI can't establish that from the selected filings. Reason: insufficient_lexical_evidence\n\nExact extract only; lexical relevance is heuristic, not human-verified semantic support.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "-m",
+        "filing_assistant",
+        "evaluate"
+      ],
+      "exit_status": 0,
+      "stdout": "{\n  \"dataset_size\": 30,\n  \"metrics\": {\n    \"retrieval_hit_at_5\": {\n      \"numerator\": 25,\n      \"denominator\": 26,\n      \"percent\": 96.15\n    },\n    \"all_gold_evidence_at_5\": {\n      \"numerator\": 25,\n      \"denominator\": 26,\n      \"percent\": 96.15\n    },\n    \"gold_complete_extractive_answer\": {\n      \"numerator\": 24,\n      \"denominator\": 26,\n      \"percent\": 92.31\n    },\n    \"correct_abstention\": {\n      \"numerator\": 4,\n      \"denominator\": 4,\n      \"percent\": 100.0\n    },\n    \"false_abstention\": {\n      \"numerator\": 2,\n      \"denominator\": 26,\n      \"percent\": 7.69\n    },\n    \"exact_quote_integrity\": {\n      \"numerator\": 28,\n      \"denominator\": 28,\n      \"percent\": 100.0\n    },\n    \"agent_gold_passage_alignment\": {\n      \"numerator\": 28,\n      \"denominator\": 28,\n      \"percent\": 100.0\n    },\n    \"wrong_scope_questions\": {\n      \"numerator\": 0,\n      \"denominator\": 30,\n      \"percent\": 0.0\n    },\n    \"complete_comparison_answers\": {\n      \"numerator\": 4,\n      \"denominator\": 4,\n      \"percent\": 100.0\n    },\n    \"median_query_latency_ms\": 0.093,\n    \"human_verified_citation_support\": null\n  }\n}\n",
+      "stderr": ""
+    }
+  ],
+  "portability_check": {
+    "command": [
+      "python3",
+      "-m",
+      "filing_assistant",
+      "ask",
+      "What caused subscription revenue growth?",
+      "--company",
+      "NSTR",
+      "--form",
+      "10-K",
+      "--json"
+    ],
+    "cwd": "temporary relocated copy of project",
+    "exit_status": 0,
+    "result": "Expected synthetic nstr-k-revenue passage returned."
+  }
+}

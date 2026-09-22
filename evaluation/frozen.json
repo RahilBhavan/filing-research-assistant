@@ -1,0 +1,11 @@
+{
+  "notice": "Frozen 30-question, agent-authored development set created before the first evaluation run. Gold labels are not independent human judgments. Do not edit inputs to improve reported scores; version a new dataset instead.",
+  "sha256": {
+    "evaluation/questions.jsonl": "d070e777bc44cee7f1099e9a9082160e14329844af50480758d2251ee3bd1f71",
+    "data/manifest.json": "e483a46fc776e47b3d3ce56e0800d5e359f716f2f2b547e5a3ba05fda95c9fa4",
+    "data/raw/hbrm-k.html": "d844b087374269bd7c1d42f82e9cb7b78af1bed33a6f569053cde50c1c0a6bac",
+    "data/raw/hbrm-q.html": "c99afefde6c3338fad577dbe6b119112057b65e722d9408ac4099f82f37811a0",
+    "data/raw/nstr-k.html": "7aeac8afdaa0f3f7d03715041f0b6383390861d27dbc8277f688a8b6e64e44f5",
+    "data/raw/nstr-q.html": "85f33503e69c9840c1928168d9ecd8b5fc74e8c2c7b1ff0947ea5a0927177489"
+  }
+}

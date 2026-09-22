@@ -1,0 +1,15 @@
+{
+  "version": "v2",
+  "selected_method": "bm25",
+  "selected_at": "2026-09-22T18:38:48.828065+00:00",
+  "basis": "Post-fix regression suite after quantity and language normalization fixes. This result is a known-test rerun, not a blind independent benchmark.",
+  "implementation": {
+    "filing_assistant/research.py": "ce15ae95fbbd5a4b0f5dc0a14acde6fd50f3ee1a6a713b9db1b27534f356377e",
+    "filing_assistant/retrieval.py": "a05dcc95395a42e868a9b3e15a7767b67ecbe72d74d5b3584fe76574b4e130d7",
+    "filing_assistant/engine.py": "f65d19092b6f02e6d690d14b2b6dc2b4deb193f07b3c0a2c1c4f071aba79b192",
+    "filing_assistant/corpus.py": "b029f0e56f9ed2a8039797ee6eeb7102d2e193b9e022ff9e25a2a255552bf0a3",
+    "filing_assistant/real_eval.py": "01a6ed46db336bcb883aec10362c96824eb00d9ee2cc8557f78b95424ae8d71f",
+    "baselines/v1_engine.py": "5f3e2006d5407caa29711c8b712515a06067455e19ea4349e3016592886ede5a",
+    "corpora/sec/data/semantic.json.gz": "686c6c02856a88941b54cf9a1f32d2f831871b2f1e530cba56c110426b6678c5"
+  }
+}

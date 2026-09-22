@@ -1,0 +1,2156 @@
+{
+  "dataset_size": 30,
+  "dataset_notice": "Frozen 30-question, agent-authored development set created before the first evaluation run. Gold labels are not independent human judgments. Do not edit inputs to improve reported scores; version a new dataset instead.",
+  "corpus_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+  "counts": {
+    "answerable": 26,
+    "unanswerable": 4,
+    "retrieval_any": 25,
+    "retrieval_all": 25,
+    "answer_gold_complete": 24,
+    "correct_abstention": 4,
+    "false_abstention": 2,
+    "answered": 24,
+    "exact_quotes": 28,
+    "quotes": 28,
+    "gold_aligned_quotes": 28,
+    "wrong_scope_questions": 0,
+    "comparisons": 4,
+    "comparison_complete": 4
+  },
+  "metrics": {
+    "retrieval_hit_at_5": {
+      "numerator": 25,
+      "denominator": 26,
+      "percent": 96.15
+    },
+    "all_gold_evidence_at_5": {
+      "numerator": 25,
+      "denominator": 26,
+      "percent": 96.15
+    },
+    "gold_complete_extractive_answer": {
+      "numerator": 24,
+      "denominator": 26,
+      "percent": 92.31
+    },
+    "correct_abstention": {
+      "numerator": 4,
+      "denominator": 4,
+      "percent": 100.0
+    },
+    "false_abstention": {
+      "numerator": 2,
+      "denominator": 26,
+      "percent": 7.69
+    },
+    "exact_quote_integrity": {
+      "numerator": 28,
+      "denominator": 28,
+      "percent": 100.0
+    },
+    "agent_gold_passage_alignment": {
+      "numerator": 28,
+      "denominator": 28,
+      "percent": 100.0
+    },
+    "wrong_scope_questions": {
+      "numerator": 0,
+      "denominator": 30,
+      "percent": 0.0
+    },
+    "complete_comparison_answers": {
+      "numerator": 4,
+      "denominator": 4,
+      "percent": 100.0
+    },
+    "median_query_latency_ms": 0.093,
+    "human_verified_citation_support": null
+  },
+  "latency_scope": "Warm in-process query only; excludes corpus parsing and disk I/O. One run per question.",
+  "results": [
+    {
+      "id": "q01",
+      "category": "direct",
+      "question": "What caused subscription revenue to grow?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-k-revenue"
+      ],
+      "reference_answer": "Additional user seats and new customer sales.",
+      "result": {
+        "question": "What caused subscription revenue to grow?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "For the year ended December 31, 2025, subscription revenue grew because existing customers purchased additional user seats. New customer sales also contributed to revenue growth.",
+            "citation": {
+              "passage_id": "nstr-k-revenue",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-k",
+              "form": "10-K",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-20",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-k.html",
+              "sha256": "7aeac8afdaa0f3f7d03715041f0b6383390861d27dbc8277f688a8b6e64e44f5",
+              "start_char": 399,
+              "end_char": 577,
+              "anchor": "nstr-k-revenue"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-k-revenue",
+            "accession": "fixture-nstr-k",
+            "score": 5.130964,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-k-contracts",
+            "accession": "fixture-nstr-k",
+            "score": 2.147775,
+            "query_term_coverage": 0.667
+          },
+          {
+            "passage_id": "nstr-k-concentration",
+            "accession": "fixture-nstr-k",
+            "score": 1.830823,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "nstr-k-business",
+            "accession": "fixture-nstr-k",
+            "score": 0.626256,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "nstr-k-cloud",
+            "accession": "fixture-nstr-k",
+            "score": 0.605834,
+            "query_term_coverage": 0.333
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 1.006
+    },
+    {
+      "id": "q02",
+      "category": "direct",
+      "question": "Why did hosting costs increase?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-k-costs"
+      ],
+      "reference_answer": "More stored documents and cloud migration expenses.",
+      "result": {
+        "question": "Why did hosting costs increase?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "Hosting costs increased during 2025 because customers stored more documents. The company also incurred migration expenses while moving workloads to a new cloud region.",
+            "citation": {
+              "passage_id": "nstr-k-costs",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-k",
+              "form": "10-K",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-20",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-k.html",
+              "sha256": "7aeac8afdaa0f3f7d03715041f0b6383390861d27dbc8277f688a8b6e64e44f5",
+              "start_char": 578,
+              "end_char": 745,
+              "anchor": "nstr-k-costs"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-k-costs",
+            "accession": "fixture-nstr-k",
+            "score": 4.577546,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-k-cloud",
+            "accession": "fixture-nstr-k",
+            "score": 1.550016,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "nstr-k-cash",
+            "accession": "fixture-nstr-k",
+            "score": 1.501068,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "nstr-k-renewals",
+            "accession": "fixture-nstr-k",
+            "score": 1.349555,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "nstr-k-security",
+            "accession": "fixture-nstr-k",
+            "score": 1.217533,
+            "query_term_coverage": 0.333
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.109
+    },
+    {
+      "id": "q03",
+      "category": "direct",
+      "question": "Why did operating cash flow improve?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-k-cash"
+      ],
+      "reference_answer": "More annual advance payments, partly offset by compensation payments.",
+      "result": {
+        "question": "Why did operating cash flow improve?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "Operating cash flow improved during 2025 because more customers paid annual subscriptions in advance. This improvement was partly offset by higher employee compensation payments.",
+            "citation": {
+              "passage_id": "nstr-k-cash",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-k",
+              "form": "10-K",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-20",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-k.html",
+              "sha256": "7aeac8afdaa0f3f7d03715041f0b6383390861d27dbc8277f688a8b6e64e44f5",
+              "start_char": 746,
+              "end_char": 924,
+              "anchor": "nstr-k-cash"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-k-cash",
+            "accession": "fixture-nstr-k",
+            "score": 7.959585,
+            "query_term_coverage": 1.0
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.09
+    },
+    {
+      "id": "q04",
+      "category": "direct",
+      "question": "How long do subscription contracts last?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-k-contracts"
+      ],
+      "reference_answer": "Generally one year.",
+      "result": {
+        "question": "How long do subscription contracts last?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "Subscription contracts generally last one year. Customers pay in advance, and the company recognizes subscription revenue over the contract term.",
+            "citation": {
+              "passage_id": "nstr-k-contracts",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-k",
+              "form": "10-K",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-20",
+              "section": "business",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-k.html",
+              "sha256": "7aeac8afdaa0f3f7d03715041f0b6383390861d27dbc8277f688a8b6e64e44f5",
+              "start_char": 143,
+              "end_char": 288,
+              "anchor": "nstr-k-contracts"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-k-contracts",
+            "accession": "fixture-nstr-k",
+            "score": 6.029117,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-k-business",
+            "accession": "fixture-nstr-k",
+            "score": 0.626256,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "nstr-k-cloud",
+            "accession": "fixture-nstr-k",
+            "score": 0.605834,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "nstr-k-cash",
+            "accession": "fixture-nstr-k",
+            "score": 0.586703,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "nstr-k-competition",
+            "accession": "fixture-nstr-k",
+            "score": 0.568743,
+            "query_term_coverage": 0.333
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.099
+    },
+    {
+      "id": "q05",
+      "category": "direct",
+      "question": "How many people did the company employ?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-k-employees"
+      ],
+      "reference_answer": "240 people as of December 31, 2025; engineering 90.",
+      "result": {
+        "question": "How many people did the company employ?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "At December 31, 2025, the company employed 240 people. The engineering team employed 90 people.",
+            "citation": {
+              "passage_id": "nstr-k-employees",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-k",
+              "form": "10-K",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-20",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-k.html",
+              "sha256": "7aeac8afdaa0f3f7d03715041f0b6383390861d27dbc8277f688a8b6e64e44f5",
+              "start_char": 1075,
+              "end_char": 1170,
+              "anchor": "nstr-k-employees"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-k-employees",
+            "accession": "fixture-nstr-k",
+            "score": 2.584211,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-k-cash",
+            "accession": "fixture-nstr-k",
+            "score": 1.501068,
+            "query_term_coverage": 1.0
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.08
+    },
+    {
+      "id": "q06",
+      "category": "direct",
+      "question": "What could unauthorized access to customer documents cause?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-k-security"
+      ],
+      "reference_answer": "Exposure of sensitive information, remediation costs and loss of trust.",
+      "result": {
+        "question": "What could unauthorized access to customer documents cause?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "Unauthorized access to customer documents could expose sensitive information. A security breach could cause remediation costs and damage customer trust.",
+            "citation": {
+              "passage_id": "nstr-k-security",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-k",
+              "form": "10-K",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-20",
+              "section": "risks",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-k.html",
+              "sha256": "7aeac8afdaa0f3f7d03715041f0b6383390861d27dbc8277f688a8b6e64e44f5",
+              "start_char": 1330,
+              "end_char": 1482,
+              "anchor": "nstr-k-security"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-k-security",
+            "accession": "fixture-nstr-k",
+            "score": 5.153232,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-k-cloud",
+            "accession": "fixture-nstr-k",
+            "score": 1.880915,
+            "query_term_coverage": 0.5
+          },
+          {
+            "passage_id": "nstr-k-business",
+            "accession": "fixture-nstr-k",
+            "score": 1.4972,
+            "query_term_coverage": 0.5
+          },
+          {
+            "passage_id": "nstr-k-costs",
+            "accession": "fixture-nstr-k",
+            "score": 1.359702,
+            "query_term_coverage": 0.5
+          },
+          {
+            "passage_id": "nstr-k-concentration",
+            "accession": "fixture-nstr-k",
+            "score": 0.347125,
+            "query_term_coverage": 0.25
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.13
+    },
+    {
+      "id": "q07",
+      "category": "direct",
+      "question": "What caused pump revenue to grow?",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-k-revenue"
+      ],
+      "reference_answer": "Replacement orders and higher selling prices.",
+      "result": {
+        "question": "What caused pump revenue to grow?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "For the year ended September 30, 2025, pump revenue grew because distributors increased orders for replacement pumps. Higher selling prices also contributed to revenue growth.",
+            "citation": {
+              "passage_id": "hbrm-k-revenue",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-k",
+              "form": "10-K",
+              "report_period": "2025-09-30",
+              "filing_date": "2025-11-21",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-k.html",
+              "sha256": "d844b087374269bd7c1d42f82e9cb7b78af1bed33a6f569053cde50c1c0a6bac",
+              "start_char": 312,
+              "end_char": 487,
+              "anchor": "hbrm-k-revenue"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-k-revenue",
+            "accession": "fixture-hbrm-k",
+            "score": 5.345261,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "hbrm-k-contracts",
+            "accession": "fixture-hbrm-k",
+            "score": 1.624469,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "hbrm-k-concentration",
+            "accession": "fixture-hbrm-k",
+            "score": 1.256573,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "hbrm-k-demand",
+            "accession": "fixture-hbrm-k",
+            "score": 0.857214,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "hbrm-k-business",
+            "accession": "fixture-hbrm-k",
+            "score": 0.831035,
+            "query_term_coverage": 0.333
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.098
+    },
+    {
+      "id": "q08",
+      "category": "direct",
+      "question": "Why did production costs increase?",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-k-costs"
+      ],
+      "reference_answer": "Copper and steel prices rose; lower overtime partly offset costs.",
+      "result": {
+        "question": "Why did production costs increase?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "Production costs increased during 2025 because copper and steel prices rose. Higher material costs were partly offset by reduced overtime at the eastern factory.",
+            "citation": {
+              "passage_id": "hbrm-k-costs",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-k",
+              "form": "10-K",
+              "report_period": "2025-09-30",
+              "filing_date": "2025-11-21",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-k.html",
+              "sha256": "d844b087374269bd7c1d42f82e9cb7b78af1bed33a6f569053cde50c1c0a6bac",
+              "start_char": 488,
+              "end_char": 649,
+              "anchor": "hbrm-k-costs"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-k-costs",
+            "accession": "fixture-hbrm-k",
+            "score": 4.761358,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "hbrm-k-supplier",
+            "accession": "fixture-hbrm-k",
+            "score": 3.50693,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "hbrm-k-revenue",
+            "accession": "fixture-hbrm-k",
+            "score": 1.518346,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "hbrm-k-warranty",
+            "accession": "fixture-hbrm-k",
+            "score": 1.133958,
+            "query_term_coverage": 0.333
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.09
+    },
+    {
+      "id": "q09",
+      "category": "direct",
+      "question": "Why did operating cash flow decline?",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-k-cash"
+      ],
+      "reference_answer": "Inventory buildup to protect against supplier delays.",
+      "result": {
+        "question": "Why did operating cash flow decline?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "Operating cash flow declined during 2025 because the company built inventory to protect against supplier delays.",
+            "citation": {
+              "passage_id": "hbrm-k-cash",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-k",
+              "form": "10-K",
+              "report_period": "2025-09-30",
+              "filing_date": "2025-11-21",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-k.html",
+              "sha256": "d844b087374269bd7c1d42f82e9cb7b78af1bed33a6f569053cde50c1c0a6bac",
+              "start_char": 650,
+              "end_char": 762,
+              "anchor": "hbrm-k-cash"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-k-cash",
+            "accession": "fixture-hbrm-k",
+            "score": 9.072304,
+            "query_term_coverage": 1.0
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.082
+    },
+    {
+      "id": "q10",
+      "category": "direct",
+      "question": "What does the single supplier provide?",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-k-supplier"
+      ],
+      "reference_answer": "Cast housings for the largest pump model.",
+      "result": {
+        "question": "What does the single supplier provide?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "A single supplier provides the cast housings used in the largest pump model. An interruption at that supplier could delay shipments and increase production costs.",
+            "citation": {
+              "passage_id": "hbrm-k-supplier",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-k",
+              "form": "10-K",
+              "report_period": "2025-09-30",
+              "filing_date": "2025-11-21",
+              "section": "risks",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-k.html",
+              "sha256": "d844b087374269bd7c1d42f82e9cb7b78af1bed33a6f569053cde50c1c0a6bac",
+              "start_char": 1016,
+              "end_char": 1178,
+              "anchor": "hbrm-k-supplier"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-k-supplier",
+            "accession": "fixture-hbrm-k",
+            "score": 5.71317,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "hbrm-k-cash",
+            "accession": "fixture-hbrm-k",
+            "score": 1.686579,
+            "query_term_coverage": 0.333
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.083
+    },
+    {
+      "id": "q11",
+      "category": "direct",
+      "question": "What percentage of annual revenue did the largest distributor represent?",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-k-concentration"
+      ],
+      "reference_answer": "24 percent of annual revenue in 2025.",
+      "result": {
+        "question": "What percentage of annual revenue did the largest distributor represent?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "The largest distributor represented 24 percent of annual revenue in 2025. The company depends on this distributor for access to several municipal customers.",
+            "citation": {
+              "passage_id": "hbrm-k-concentration",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-k",
+              "form": "10-K",
+              "report_period": "2025-09-30",
+              "filing_date": "2025-11-21",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-k.html",
+              "sha256": "d844b087374269bd7c1d42f82e9cb7b78af1bed33a6f569053cde50c1c0a6bac",
+              "start_char": 763,
+              "end_char": 919,
+              "anchor": "hbrm-k-concentration"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-k-concentration",
+            "accession": "fixture-hbrm-k",
+            "score": 6.43193,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "hbrm-k-contracts",
+            "accession": "fixture-hbrm-k",
+            "score": 2.509565,
+            "query_term_coverage": 0.5
+          },
+          {
+            "passage_id": "hbrm-k-revenue",
+            "accession": "fixture-hbrm-k",
+            "score": 2.324754,
+            "query_term_coverage": 0.5
+          },
+          {
+            "passage_id": "hbrm-k-supplier",
+            "accession": "fixture-hbrm-k",
+            "score": 1.377535,
+            "query_term_coverage": 0.25
+          },
+          {
+            "passage_id": "hbrm-k-business",
+            "accession": "fixture-hbrm-k",
+            "score": 0.831035,
+            "query_term_coverage": 0.25
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.112
+    },
+    {
+      "id": "q12",
+      "category": "direct",
+      "question": "What risk was added during the quarter?",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-q"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-q-flood"
+      ],
+      "reference_answer": "Flooding near the eastern factory.",
+      "result": {
+        "question": "What risk was added during the quarter?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "Flooding near the eastern factory could interrupt production and delay customer deliveries. This risk was added during the quarter.",
+            "citation": {
+              "passage_id": "hbrm-q-flood",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-q",
+              "form": "10-Q",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-06",
+              "section": "risks",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-q.html",
+              "sha256": "c99afefde6c3338fad577dbe6b119112057b65e722d9408ac4099f82f37811a0",
+              "start_char": 1037,
+              "end_char": 1168,
+              "anchor": "hbrm-q-flood"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-q-flood",
+            "accession": "fixture-hbrm-q",
+            "score": 3.552057,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "hbrm-q-warranty",
+            "accession": "fixture-hbrm-q",
+            "score": 1.446462,
+            "query_term_coverage": 0.5
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.081
+    },
+    {
+      "id": "q13",
+      "category": "paraphrase",
+      "question": "Why did cloud storage expenses fall?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-q"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-q-costs"
+      ],
+      "reference_answer": "Renegotiated cloud storage rates; migration expenses ended.",
+      "result": {
+        "question": "Why did cloud storage expenses fall?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "Hosting costs decreased during the quarter because a cloud contract renegotiation lowered storage rates. Migration expenses ended in February 2026.",
+            "citation": {
+              "passage_id": "nstr-q-costs",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-q",
+              "form": "10-Q",
+              "report_period": "2026-03-31",
+              "filing_date": "2026-05-08",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-q.html",
+              "sha256": "85f33503e69c9840c1928168d9ecd8b5fc74e8c2c7b1ff0947ea5a0927177489",
+              "start_char": 348,
+              "end_char": 495,
+              "anchor": "nstr-q-costs"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-q-costs",
+            "accession": "fixture-nstr-q",
+            "score": 7.590883,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-q-cloud",
+            "accession": "fixture-nstr-q",
+            "score": 2.500935,
+            "query_term_coverage": 0.5
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.086
+    },
+    {
+      "id": "q14",
+      "category": "paraphrase",
+      "question": "What explains weaker cash generation?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-q"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-q-cash"
+      ],
+      "reference_answer": "Large customers shifted to quarterly payments.",
+      "result": {
+        "question": "What explains weaker cash generation?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "Operating cash flow declined during the quarter because several large customers shifted from annual advance payments to quarterly payments.",
+            "citation": {
+              "passage_id": "nstr-q-cash",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-q",
+              "form": "10-Q",
+              "report_period": "2026-03-31",
+              "filing_date": "2026-05-08",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-q.html",
+              "sha256": "85f33503e69c9840c1928168d9ecd8b5fc74e8c2c7b1ff0947ea5a0927177489",
+              "start_char": 496,
+              "end_char": 635,
+              "anchor": "nstr-q-cash"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-q-cash",
+            "accession": "fixture-nstr-q",
+            "score": 6.093196,
+            "query_term_coverage": 1.0
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.077
+    },
+    {
+      "id": "q15",
+      "category": "paraphrase",
+      "question": "What could a cloud service interruption do to customers?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-k-cloud"
+      ],
+      "reference_answer": "Interrupt access and cause cancellations.",
+      "result": {
+        "question": "What could a cloud service interruption do to customers?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "The company relies on a single cloud hosting provider. A prolonged service outage could interrupt customer access and cause customers to cancel subscriptions.",
+            "citation": {
+              "passage_id": "nstr-k-cloud",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-k",
+              "form": "10-K",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-20",
+              "section": "risks",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-k.html",
+              "sha256": "7aeac8afdaa0f3f7d03715041f0b6383390861d27dbc8277f688a8b6e64e44f5",
+              "start_char": 1171,
+              "end_char": 1329,
+              "anchor": "nstr-k-cloud"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-k-cloud",
+            "accession": "fixture-nstr-k",
+            "score": 5.485715,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-k-costs",
+            "accession": "fixture-nstr-k",
+            "score": 1.671828,
+            "query_term_coverage": 0.5
+          },
+          {
+            "passage_id": "nstr-k-competition",
+            "accession": "fixture-nstr-k",
+            "score": 1.455117,
+            "query_term_coverage": 0.25
+          },
+          {
+            "passage_id": "nstr-k-concentration",
+            "accession": "fixture-nstr-k",
+            "score": 0.347125,
+            "query_term_coverage": 0.25
+          },
+          {
+            "passage_id": "nstr-k-security",
+            "accession": "fixture-nstr-k",
+            "score": 0.330899,
+            "query_term_coverage": 0.25
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.126
+    },
+    {
+      "id": "q16",
+      "category": "paraphrase",
+      "question": "What drove lower pump sales?",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-q"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-q-revenue"
+      ],
+      "reference_answer": "Municipal customers delayed replacement orders.",
+      "result": {
+        "question": "What drove lower pump sales?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "For the three months ended December 31, 2025, pump revenue declined because municipal customers delayed replacement orders. Higher selling prices only partly offset lower shipment volumes.",
+            "citation": {
+              "passage_id": "hbrm-q-revenue",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-q",
+              "form": "10-Q",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-06",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-q.html",
+              "sha256": "c99afefde6c3338fad577dbe6b119112057b65e722d9408ac4099f82f37811a0",
+              "start_char": 173,
+              "end_char": 361,
+              "anchor": "hbrm-q-revenue"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-q-revenue",
+            "accession": "fixture-hbrm-q",
+            "score": 3.022371,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "hbrm-q-costs",
+            "accession": "fixture-hbrm-q",
+            "score": 2.277005,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "hbrm-q-concentration",
+            "accession": "fixture-hbrm-q",
+            "score": 1.396859,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "hbrm-q-business",
+            "accession": "fixture-hbrm-q",
+            "score": 0.989927,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "hbrm-q-supplier",
+            "accession": "fixture-hbrm-q",
+            "score": 0.930222,
+            "query_term_coverage": 0.333
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.089
+    },
+    {
+      "id": "q17",
+      "category": "paraphrase",
+      "question": "What exposure arises from depending on one cast housing vendor?",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-k-supplier"
+      ],
+      "reference_answer": "An interruption could delay shipments and increase costs.",
+      "result": {
+        "question": "What exposure arises from depending on one cast housing vendor?",
+        "status": "abstained",
+        "reason": "insufficient_lexical_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-k-supplier",
+            "accession": "fixture-hbrm-k",
+            "score": 5.71317,
+            "query_term_coverage": 0.429
+          },
+          {
+            "passage_id": "hbrm-k-cash",
+            "accession": "fixture-hbrm-k",
+            "score": 1.686579,
+            "query_term_coverage": 0.143
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": false,
+      "latency_ms": 0.094
+    },
+    {
+      "id": "q18",
+      "category": "paraphrase",
+      "question": "Which buyers and sales channels does the pump business serve?",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-k-business"
+      ],
+      "reference_answer": "Independent distributors supply municipal utilities and commercial buildings.",
+      "result": {
+        "question": "Which buyers and sales channels does the pump business serve?",
+        "status": "abstained",
+        "reason": "insufficient_lexical_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-k-concentration",
+            "accession": "fixture-hbrm-k",
+            "score": 2.882362,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "hbrm-k-revenue",
+            "accession": "fixture-hbrm-k",
+            "score": 2.703471,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "hbrm-k-contracts",
+            "accession": "fixture-hbrm-k",
+            "score": 1.624469,
+            "query_term_coverage": 0.167
+          },
+          {
+            "passage_id": "hbrm-k-warranty",
+            "accession": "fixture-hbrm-k",
+            "score": 1.467147,
+            "query_term_coverage": 0.167
+          },
+          {
+            "passage_id": "hbrm-k-demand",
+            "accession": "fixture-hbrm-k",
+            "score": 0.857214,
+            "query_term_coverage": 0.167
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": false,
+      "retrieval_all": false,
+      "gold_complete_answer": false,
+      "latency_ms": 0.104
+    },
+    {
+      "id": "q19",
+      "category": "period",
+      "question": "For the report period 2026-03-31, what caused subscription revenue growth?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-q"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-q-revenue"
+      ],
+      "reference_answer": "Higher renewal prices, with less contribution from additional seats.",
+      "result": {
+        "question": "For the report period 2026-03-31, what caused subscription revenue growth?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "For the three months ended March 31, 2026, subscription revenue grew primarily because of higher renewal prices. Sales of additional user seats contributed less than in the prior year.",
+            "citation": {
+              "passage_id": "nstr-q-revenue",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-q",
+              "form": "10-Q",
+              "report_period": "2026-03-31",
+              "filing_date": "2026-05-08",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-q.html",
+              "sha256": "85f33503e69c9840c1928168d9ecd8b5fc74e8c2c7b1ff0947ea5a0927177489",
+              "start_char": 163,
+              "end_char": 347,
+              "anchor": "nstr-q-revenue"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-q-revenue",
+            "accession": "fixture-nstr-q",
+            "score": 4.231569,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-q-concentration",
+            "accession": "fixture-nstr-q",
+            "score": 1.391764,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "nstr-q-business",
+            "accession": "fixture-nstr-q",
+            "score": 1.334524,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "nstr-q-export",
+            "accession": "fixture-nstr-q",
+            "score": 1.083446,
+            "query_term_coverage": 0.333
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.107
+    },
+    {
+      "id": "q20",
+      "category": "period",
+      "question": "For the report period 2025-12-31, what percentage of quarterly revenue did the largest distributor represent?",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-q"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-q-concentration"
+      ],
+      "reference_answer": "27 percent of quarterly revenue, not the annual 24 percent.",
+      "result": {
+        "question": "For the report period 2025-12-31, what percentage of quarterly revenue did the largest distributor represent?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "The largest distributor represented 27 percent of quarterly revenue for the three months ended December 31, 2025. Annual and quarterly percentages cover different periods.",
+            "citation": {
+              "passage_id": "hbrm-q-concentration",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-q",
+              "form": "10-Q",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-06",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-q.html",
+              "sha256": "c99afefde6c3338fad577dbe6b119112057b65e722d9408ac4099f82f37811a0",
+              "start_char": 618,
+              "end_char": 789,
+              "anchor": "hbrm-q-concentration"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-q-concentration",
+            "accession": "fixture-hbrm-q",
+            "score": 6.616872,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "hbrm-q-supplier",
+            "accession": "fixture-hbrm-q",
+            "score": 1.228362,
+            "query_term_coverage": 0.25
+          },
+          {
+            "passage_id": "hbrm-q-revenue",
+            "accession": "fixture-hbrm-q",
+            "score": 1.09614,
+            "query_term_coverage": 0.25
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.121
+    },
+    {
+      "id": "q21",
+      "category": "period",
+      "question": "In the 10-K, how many employees worked at Northstar Software?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-k-employees"
+      ],
+      "reference_answer": "240 people, not the later quarter 250.",
+      "result": {
+        "question": "In the 10-K, how many employees worked at Northstar Software?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "At December 31, 2025, the company employed 240 people. The engineering team employed 90 people.",
+            "citation": {
+              "passage_id": "nstr-k-employees",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-k",
+              "form": "10-K",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-20",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-k.html",
+              "sha256": "7aeac8afdaa0f3f7d03715041f0b6383390861d27dbc8277f688a8b6e64e44f5",
+              "start_char": 1075,
+              "end_char": 1170,
+              "anchor": "nstr-k-employees"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-k-employees",
+            "accession": "fixture-nstr-k",
+            "score": 2.584211,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-k-cash",
+            "accession": "fixture-nstr-k",
+            "score": 1.501068,
+            "query_term_coverage": 1.0
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.093
+    },
+    {
+      "id": "q22",
+      "category": "period",
+      "question": "For the report period 2025-09-30, how many people did Harbor Manufacturing employ?",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-k"
+        ]
+      },
+      "compare": false,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-k-employees"
+      ],
+      "reference_answer": "620 people, not the later quarter 600.",
+      "result": {
+        "question": "For the report period 2025-09-30, how many people did Harbor Manufacturing employ?",
+        "status": "answered",
+        "reason": "extractive_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "At September 30, 2025, the company employed 620 people. Factory operations employed 480 people.",
+            "citation": {
+              "passage_id": "hbrm-k-employees",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-k",
+              "form": "10-K",
+              "report_period": "2025-09-30",
+              "filing_date": "2025-11-21",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-k.html",
+              "sha256": "d844b087374269bd7c1d42f82e9cb7b78af1bed33a6f569053cde50c1c0a6bac",
+              "start_char": 920,
+              "end_char": 1015,
+              "anchor": "hbrm-k-employees"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-k-employees",
+            "accession": "fixture-hbrm-k",
+            "score": 3.285741,
+            "query_term_coverage": 1.0
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.092
+    },
+    {
+      "id": "q23",
+      "category": "comparison",
+      "question": "Compare the reported causes of subscription revenue growth between the two filings.",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k",
+          "fixture-nstr-q"
+        ]
+      },
+      "compare": true,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-k-revenue",
+        "nstr-q-revenue"
+      ],
+      "reference_answer": "Annual: seats and new customers. Quarterly: higher renewal prices.",
+      "result": {
+        "question": "Compare the reported causes of subscription revenue growth between the two filings.",
+        "status": "answered",
+        "reason": "paired_extracts_not_a_calculated_change",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "For the year ended December 31, 2025, subscription revenue grew because existing customers purchased additional user seats. New customer sales also contributed to revenue growth.",
+            "citation": {
+              "passage_id": "nstr-k-revenue",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-k",
+              "form": "10-K",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-20",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-k.html",
+              "sha256": "7aeac8afdaa0f3f7d03715041f0b6383390861d27dbc8277f688a8b6e64e44f5",
+              "start_char": 399,
+              "end_char": 577,
+              "anchor": "nstr-k-revenue"
+            }
+          },
+          {
+            "excerpt": "For the three months ended March 31, 2026, subscription revenue grew primarily because of higher renewal prices. Sales of additional user seats contributed less than in the prior year.",
+            "citation": {
+              "passage_id": "nstr-q-revenue",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-q",
+              "form": "10-Q",
+              "report_period": "2026-03-31",
+              "filing_date": "2026-05-08",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-q.html",
+              "sha256": "85f33503e69c9840c1928168d9ecd8b5fc74e8c2c7b1ff0947ea5a0927177489",
+              "start_char": 163,
+              "end_char": 347,
+              "anchor": "nstr-q-revenue"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-k-revenue",
+            "accession": "fixture-nstr-k",
+            "score": 5.130964,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-q-revenue",
+            "accession": "fixture-nstr-q",
+            "score": 4.231569,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-k-contracts",
+            "accession": "fixture-nstr-k",
+            "score": 2.147775,
+            "query_term_coverage": 0.667
+          },
+          {
+            "passage_id": "nstr-q-concentration",
+            "accession": "fixture-nstr-q",
+            "score": 1.391764,
+            "query_term_coverage": 0.333
+          },
+          {
+            "passage_id": "nstr-k-concentration",
+            "accession": "fixture-nstr-k",
+            "score": 1.830823,
+            "query_term_coverage": 0.333
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.158
+    },
+    {
+      "id": "q24",
+      "category": "comparison",
+      "question": "Compare hosting costs and their causes between the two filings.",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k",
+          "fixture-nstr-q"
+        ]
+      },
+      "compare": true,
+      "answerable": true,
+      "gold_passage_ids": [
+        "nstr-k-costs",
+        "nstr-q-costs"
+      ],
+      "reference_answer": "Annual costs increased; quarterly costs decreased after renegotiation.",
+      "result": {
+        "question": "Compare hosting costs and their causes between the two filings.",
+        "status": "answered",
+        "reason": "paired_extracts_not_a_calculated_change",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "Hosting costs increased during 2025 because customers stored more documents. The company also incurred migration expenses while moving workloads to a new cloud region.",
+            "citation": {
+              "passage_id": "nstr-k-costs",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-k",
+              "form": "10-K",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-20",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-k.html",
+              "sha256": "7aeac8afdaa0f3f7d03715041f0b6383390861d27dbc8277f688a8b6e64e44f5",
+              "start_char": 578,
+              "end_char": 745,
+              "anchor": "nstr-k-costs"
+            }
+          },
+          {
+            "excerpt": "Hosting costs decreased during the quarter because a cloud contract renegotiation lowered storage rates. Migration expenses ended in February 2026.",
+            "citation": {
+              "passage_id": "nstr-q-costs",
+              "company": "Northstar Software",
+              "ticker": "NSTR",
+              "cik": null,
+              "accession": "fixture-nstr-q",
+              "form": "10-Q",
+              "report_period": "2026-03-31",
+              "filing_date": "2026-05-08",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/nstr-q.html",
+              "sha256": "85f33503e69c9840c1928168d9ecd8b5fc74e8c2c7b1ff0947ea5a0927177489",
+              "start_char": 348,
+              "end_char": 495,
+              "anchor": "nstr-q-costs"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "nstr-k-costs",
+            "accession": "fixture-nstr-k",
+            "score": 3.122429,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-q-costs",
+            "accession": "fixture-nstr-q",
+            "score": 4.202306,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "nstr-k-cloud",
+            "accession": "fixture-nstr-k",
+            "score": 1.550016,
+            "query_term_coverage": 0.5
+          },
+          {
+            "passage_id": "nstr-q-cloud",
+            "accession": "fixture-nstr-q",
+            "score": 1.250468,
+            "query_term_coverage": 0.5
+          },
+          {
+            "passage_id": "nstr-k-renewals",
+            "accession": "fixture-nstr-k",
+            "score": 1.349555,
+            "query_term_coverage": 0.5
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.127
+    },
+    {
+      "id": "q25",
+      "category": "comparison",
+      "question": "Compare the reported pump revenue drivers between the two filings.",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-k",
+          "fixture-hbrm-q"
+        ]
+      },
+      "compare": true,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-k-revenue",
+        "hbrm-q-revenue"
+      ],
+      "reference_answer": "Annual replacement orders drove growth; quarterly municipal delays drove decline.",
+      "result": {
+        "question": "Compare the reported pump revenue drivers between the two filings.",
+        "status": "answered",
+        "reason": "paired_extracts_not_a_calculated_change",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "For the year ended September 30, 2025, pump revenue grew because distributors increased orders for replacement pumps. Higher selling prices also contributed to revenue growth.",
+            "citation": {
+              "passage_id": "hbrm-k-revenue",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-k",
+              "form": "10-K",
+              "report_period": "2025-09-30",
+              "filing_date": "2025-11-21",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-k.html",
+              "sha256": "d844b087374269bd7c1d42f82e9cb7b78af1bed33a6f569053cde50c1c0a6bac",
+              "start_char": 312,
+              "end_char": 487,
+              "anchor": "hbrm-k-revenue"
+            }
+          },
+          {
+            "excerpt": "For the three months ended December 31, 2025, pump revenue declined because municipal customers delayed replacement orders. Higher selling prices only partly offset lower shipment volumes.",
+            "citation": {
+              "passage_id": "hbrm-q-revenue",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-q",
+              "form": "10-Q",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-06",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-q.html",
+              "sha256": "c99afefde6c3338fad577dbe6b119112057b65e722d9408ac4099f82f37811a0",
+              "start_char": 173,
+              "end_char": 361,
+              "anchor": "hbrm-q-revenue"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-k-revenue",
+            "accession": "fixture-hbrm-k",
+            "score": 2.703471,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "hbrm-q-revenue",
+            "accession": "fixture-hbrm-q",
+            "score": 1.926232,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "hbrm-k-contracts",
+            "accession": "fixture-hbrm-k",
+            "score": 1.624469,
+            "query_term_coverage": 0.5
+          },
+          {
+            "passage_id": "hbrm-q-concentration",
+            "accession": "fixture-hbrm-q",
+            "score": 1.396859,
+            "query_term_coverage": 0.5
+          },
+          {
+            "passage_id": "hbrm-k-concentration",
+            "accession": "fixture-hbrm-k",
+            "score": 1.256573,
+            "query_term_coverage": 0.5
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.137
+    },
+    {
+      "id": "q26",
+      "category": "comparison",
+      "question": "Compare operating cash flow and its causes between the two filings.",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-k",
+          "fixture-hbrm-q"
+        ]
+      },
+      "compare": true,
+      "answerable": true,
+      "gold_passage_ids": [
+        "hbrm-k-cash",
+        "hbrm-q-cash"
+      ],
+      "reference_answer": "Annual inventory buildup reduced cash flow; quarterly inventory sales improved it.",
+      "result": {
+        "question": "Compare operating cash flow and its causes between the two filings.",
+        "status": "answered",
+        "reason": "paired_extracts_not_a_calculated_change",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [
+          {
+            "excerpt": "Operating cash flow declined during 2025 because the company built inventory to protect against supplier delays.",
+            "citation": {
+              "passage_id": "hbrm-k-cash",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-k",
+              "form": "10-K",
+              "report_period": "2025-09-30",
+              "filing_date": "2025-11-21",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-k.html",
+              "sha256": "d844b087374269bd7c1d42f82e9cb7b78af1bed33a6f569053cde50c1c0a6bac",
+              "start_char": 650,
+              "end_char": 762,
+              "anchor": "hbrm-k-cash"
+            }
+          },
+          {
+            "excerpt": "Operating cash flow improved during the quarter because the company sold inventory accumulated in the preceding year.",
+            "citation": {
+              "passage_id": "hbrm-q-cash",
+              "company": "Harbor Manufacturing",
+              "ticker": "HBRM",
+              "cik": null,
+              "accession": "fixture-hbrm-q",
+              "form": "10-Q",
+              "report_period": "2025-12-31",
+              "filing_date": "2026-02-06",
+              "section": "mda",
+              "source_kind": "synthetic_fixture",
+              "source_url": null,
+              "local_path": "data/raw/hbrm-q.html",
+              "sha256": "c99afefde6c3338fad577dbe6b119112057b65e722d9408ac4099f82f37811a0",
+              "start_char": 500,
+              "end_char": 617,
+              "anchor": "hbrm-q-cash"
+            }
+          }
+        ],
+        "retrieved": [
+          {
+            "passage_id": "hbrm-k-cash",
+            "accession": "fixture-hbrm-k",
+            "score": 6.804228,
+            "query_term_coverage": 1.0
+          },
+          {
+            "passage_id": "hbrm-q-cash",
+            "accession": "fixture-hbrm-q",
+            "score": 6.921531,
+            "query_term_coverage": 1.0
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": true,
+      "retrieval_all": true,
+      "gold_complete_answer": true,
+      "latency_ms": 0.12
+    },
+    {
+      "id": "q27",
+      "category": "unsupported",
+      "question": "What was the CEO compensation in cryptocurrency?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k"
+        ]
+      },
+      "compare": false,
+      "answerable": false,
+      "gold_passage_ids": [],
+      "reference_answer": "",
+      "unanswerable_reason": "No compensation or cryptocurrency disclosure in the supported corpus.",
+      "result": {
+        "question": "What was the CEO compensation in cryptocurrency?",
+        "status": "abstained",
+        "reason": "insufficient_lexical_evidence",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [],
+        "retrieved": [
+          {
+            "passage_id": "nstr-k-cash",
+            "accession": "fixture-nstr-k",
+            "score": 1.989896,
+            "query_term_coverage": 0.333
+          }
+        ],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": false,
+      "retrieval_all": false,
+      "gold_complete_answer": false,
+      "latency_ms": 0.078
+    },
+    {
+      "id": "q28",
+      "category": "unsupported",
+      "question": "For the report period 2024-12-31, what caused subscription revenue growth?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k"
+        ]
+      },
+      "compare": false,
+      "answerable": false,
+      "gold_passage_ids": [],
+      "reference_answer": "",
+      "unanswerable_reason": "Requested period conflicts with the selected 2025 annual filing.",
+      "result": {
+        "question": "For the report period 2024-12-31, what caused subscription revenue growth?",
+        "status": "abstained",
+        "reason": "question_period_conflicts_with_scope",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [],
+        "retrieved": [],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": false,
+      "retrieval_all": false,
+      "gold_complete_answer": false,
+      "latency_ms": 0.024
+    },
+    {
+      "id": "q29",
+      "category": "unsupported",
+      "question": "What caused Harbor Manufacturing pump revenue growth?",
+      "scope": {
+        "company": "NSTR",
+        "accessions": [
+          "fixture-nstr-k"
+        ]
+      },
+      "compare": false,
+      "answerable": false,
+      "gold_passage_ids": [],
+      "reference_answer": "",
+      "unanswerable_reason": "The question asks about a different company than the selected scope.",
+      "result": {
+        "question": "What caused Harbor Manufacturing pump revenue growth?",
+        "status": "abstained",
+        "reason": "question_company_conflicts_with_scope",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [],
+        "retrieved": [],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": false,
+      "retrieval_all": false,
+      "gold_complete_answer": false,
+      "latency_ms": 0.013
+    },
+    {
+      "id": "q30",
+      "category": "unsupported",
+      "question": "What did the 10-K/A amendment change about pump revenue?",
+      "scope": {
+        "company": "HBRM",
+        "accessions": [
+          "fixture-hbrm-k"
+        ]
+      },
+      "compare": false,
+      "answerable": false,
+      "gold_passage_ids": [],
+      "reference_answer": "",
+      "unanswerable_reason": "No amended filing exists in this synthetic corpus; do not infer one.",
+      "result": {
+        "question": "What did the 10-K/A amendment change about pump revenue?",
+        "status": "abstained",
+        "reason": "question_form_conflicts_with_scope",
+        "source_notice": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.",
+        "answer": [],
+        "retrieved": [],
+        "support_assessment": "Exact extract only; lexical relevance is heuristic, not human-verified semantic support."
+      },
+      "retrieval_any": false,
+      "retrieval_all": false,
+      "gold_complete_answer": false,
+      "latency_ms": 0.019
+    }
+  ]
+}

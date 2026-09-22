@@ -1,0 +1,31 @@
+name: Build fresh SEC corpus artifact
+
+on:
+  schedule:
+    - cron: "17 8 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install .
+      - name: Download to a reviewable new corpus
+        env:
+          SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+        run: python -m filing_assistant fetch-sec --cik 1261333 --cik 819793 --as-of "$(date -u +%F)" --destination refreshed-sec-corpus
+      - name: Verify generated corpus
+        run: python -m filing_assistant --corpus refreshed-sec-corpus list
+      - uses: actions/upload-artifact@v4
+        with:
+          name: refreshed-sec-corpus-${{ github.run_id }}
+          path: refreshed-sec-corpus
+          retention-days: 14
+
