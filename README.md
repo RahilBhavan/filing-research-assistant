@@ -49,6 +49,8 @@ The evidence gates are hand-tuned regex heuristics fitted to this 60-question se
 
 ## CLI and verification
 
+Run the CLI from a checkout of this repository: the corpora live in the repo, not in the installed package. The installed `filing-research` command reads the current directory unless you pass `--corpus`, and exits with an error if no corpus is there.
+
 Legacy CLI defaults to the synthetic fixture corpus. Select the real corpus explicitly:
 
 ```sh

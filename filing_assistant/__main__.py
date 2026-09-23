@@ -8,6 +8,9 @@ from .evaluate import evaluate
 from .sec import fetch_corpus
 
 DEFAULT_ROOT = Path(__file__).resolve().parents[1]
+if not (DEFAULT_ROOT/'data/manifest.json').exists():
+    # Installed package: data lives in the checkout, not site-packages.
+    DEFAULT_ROOT = Path.cwd()
 
 
 def main(argv=None):
@@ -34,10 +37,14 @@ def main(argv=None):
     fetch.add_argument('--as-of',required=True)
     fetch.add_argument('--destination',type=Path,required=True)
     args=parser.parse_args(argv)
+    corpus=DEFAULT_ROOT/'corpora/sec' if args.command=='serve' and args.corpus==DEFAULT_ROOT else args.corpus
+    if args.command!='fetch-sec' and not (corpus/'data/manifest.json').exists():
+        print('Error: no corpus at {} (missing data/manifest.json); run from a checkout or pass --corpus'.format(corpus),file=sys.stderr)
+        return 2
     try:
         if args.command=='serve':
             from .webapp import serve
-            serve(DEFAULT_ROOT/'corpora/sec' if args.corpus==DEFAULT_ROOT else args.corpus,args.port)
+            serve(corpus,args.port)
         elif args.command=='fetch-sec':
             docs=fetch_corpus(args.destination,args.cik,args.as_of)
             print('Downloaded {} SEC filings to {}'.format(len(docs),args.destination))
