@@ -39,7 +39,7 @@ The original fictional Northstar/Harbor corpus remains under `data/` for regress
 
 Sixty source-authored questions were frozen before retrieval development: 30 development and 30 held-out, with 20 unsupported questions overall. BM25, corpus-fitted latent semantic analysis and hybrid retrieval were compared; BM25 won the development comparison and is the default.
 
-The original frozen held-out result is preserved as version 1. After correctness fixes, version 2 returns complete gold evidence for **18/20 answerable questions**, correctly abstains on **10/10 unsupported questions**, and has **0/20 false abstentions**. The two remaining misses are alternate relevant passages. Version 2 is a known-test rerun, not an independent blind benchmark.
+The original frozen held-out result is preserved as version 1, which is archival: its selection hashes match no commit in this repository, so it cannot be rerun. After correctness fixes, version 2 returns complete gold evidence for **18/20 answerable questions**, correctly abstains on **10/10 unsupported questions**, and has **0/20 false abstentions**. The two remaining misses are alternate relevant passages. Version 2 is a known-test rerun, not an independent blind benchmark.
 
 Quantity/date/cause checks remain heuristic. Exact quotation does not guarantee answer relevance, and human semantic-support validation has not been performed. The original frozen results remain unchanged; post-fix results are recorded separately as `heldout-v2-results.json`.
 
@@ -57,9 +57,10 @@ python3 -m filing_assistant --corpus corpora/sec ask 'Why did revenue increase?'
 python3 -m filing_assistant --corpus corpora/sec ask 'Compare total liquidity disclosed in the two filings.' --company AIN --compare --json
 python3 -m unittest discover -s tests -q
 python3 -m filing_assistant.real_eval dev
-python3 -m filing_assistant.real_eval heldout
 python3 -m filing_assistant.real_eval heldout-v2
 ```
+
+Evaluation runs print counts to stdout and leave tracked results untouched. Add `--write` (for example `python3 -m filing_assistant.real_eval heldout-v2 --write` or `python3 -m filing_assistant --corpus . evaluate --write`) only when intentionally regenerating the tracked JSON and reports. `real_eval heldout` (v1) prints an archival notice and exits 1.
 
 Add `--method semantic` or `--method hybrid` to a real-corpus CLI question to compare retrieval. All methods share the evidence gates. Semantic search here is 64-dimensional LSA fitted to these passages, not a pretrained embedding service. Its static model requires no numerical library at query time.
 

@@ -14,7 +14,7 @@ def check_freeze():
         if hashlib.sha256((ROOT/f).read_bytes()).hexdigest()!=digest:
             raise ValueError('Frozen input changed: '+f)
 
-def evaluate(split='dev',methods=('baseline','bm25','semantic','hybrid')):
+def evaluate(split='dev',methods=('baseline','bm25','semantic','hybrid'),write=False):
     check_freeze()
     if split not in {'dev','heldout','dev-v2','heldout-v2'}:raise ValueError('Unknown split')
     versioned=split.endswith('-v2')
@@ -52,10 +52,14 @@ def evaluate(split='dev',methods=('baseline','bm25','semantic','hybrid')):
             results.append(dict(id=row['id'],question=row['question'],answerable=row['answerable'],outcome=outcome,gold=sorted(gold),result=result))
         reports[method]=dict(counts=counts,results=results)
     payload=dict(split=split,human_semantic_support=None,metric_note='Gold-ID completeness is strict: alternate relevant passages count as misses. Incorrect answers includes these gold mismatches; requires independent review.',reports=reports)
-    (ROOT/('evaluation/real/'+split+'-results.json')).write_text(json.dumps(payload,indent=2)+'\n')
+    if write:(ROOT/('evaluation/real/'+split+'-results.json')).write_text(json.dumps(payload,indent=2)+'\n')
     return {method:report['counts'] for method,report in reports.items()}
 
 if __name__=='__main__':
     import argparse
-    p=argparse.ArgumentParser();p.add_argument('split',choices=['dev','heldout','dev-v2','heldout-v2']);args=p.parse_args()
-    print(json.dumps(evaluate(args.split),indent=2))
+    import sys
+    p=argparse.ArgumentParser();p.add_argument('split',choices=['dev','heldout','dev-v2','heldout-v2']);p.add_argument('--write',action='store_true',help='Rewrite the tracked results JSON');args=p.parse_args()
+    if args.split=='heldout':
+        # v1 selection hashes match no commit in this repo, so the v1 run cannot be reproduced.
+        sys.exit('v1 frozen results are archival and cannot be reproduced from this repo; run heldout-v2')
+    print(json.dumps(evaluate(args.split,write=args.write),indent=2))

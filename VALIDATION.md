@@ -6,9 +6,9 @@ All commands below ran from the project directory unless stated otherwise. The r
 |---|---|---:|---|
 | Regression and evidence tests | `python3 -m unittest discover -s tests -q` | 0 | 67 tests passed, including original 41 |
 | Source/index integrity | Covered by `test_sources_and_frozen_index_match_rebuild` | 0 | Raw hashes, frozen questions, and rebuilt index match |
-| Development comparison | `python3 -m filing_assistant.real_eval dev` | 0 | Baseline plus BM25, LSA and hybrid measured on 30 questions |
-| Held-out comparison | `python3 -m filing_assistant.real_eval heldout` | 0 | 30 questions evaluated after implementation selection was hashed; errors retained |
-| Post-fix held-out comparison | `python3 -m filing_assistant.real_eval heldout-v2` | 0 | 18/20 gold-complete, 10/10 unsupported abstentions, 0/20 false abstentions; two alternate-passage misses |
+| Development comparison | `python3 -m filing_assistant.real_eval dev` | 0 | Baseline plus BM25, LSA and hybrid measured on 30 questions; prints only, `--write` rewrites `dev-results.json` |
+| Held-out comparison (v1, archival) | `python3 -m filing_assistant.real_eval heldout` | 1 | Prints "v1 frozen results are archival and cannot be reproduced from this repo; run heldout-v2". The v1 selection hashes match no commit, so `heldout-results.json` is kept only as a record |
+| Post-fix held-out comparison | `python3 -m filing_assistant.real_eval heldout-v2` | 0 | 18/20 gold-complete, 10/10 unsupported abstentions, 0/20 false abstentions; two alternate-passage misses; prints only, `--write` rewrites `heldout-v2-results.json` |
 | Real CLI answer | `python3 -m filing_assistant --corpus corpora/sec ask 'Why did revenue increase?' --company DOCU --form 10-Q --json` | 0 | Exact `docu-q-31-0` excerpt with accession, dates, hash and source anchor |
 | JavaScript syntax | Bundled Node: `node --check filing_assistant/static/app.js` | 0 | No syntax errors |
 | Package build | `python3 -m pip wheel --no-build-isolation . --no-deps -w /tmp/filing-wheel2` | 0 | `filing_research_assistant-1.0.0-py3-none-any.whl` with entry point metadata |

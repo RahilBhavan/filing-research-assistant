@@ -12,7 +12,7 @@ def digest(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def evaluate(root):
+def evaluate(root,write=False):
     root = Path(root)
     frozen = json.loads((root/'evaluation/frozen.json').read_text())
     for path, expected in frozen['sha256'].items():
@@ -83,7 +83,7 @@ def evaluate(root):
         'human_verified_citation_support':None,
     }
     report = {'dataset_size':len(records),'dataset_notice':frozen['notice'],'corpus_notice':index['notice'],'counts':counts,'metrics':metrics,'latency_scope':'Warm in-process query only; excludes corpus parsing and disk I/O. One run per question.','results':rows}
-    (root/'evaluation/results.json').write_text(json.dumps(report,indent=2)+'\n')
+    if write:(root/'evaluation/results.json').write_text(json.dumps(report,indent=2)+'\n')
     lines=['# Evaluation results','',index['notice'],'',frozen['notice'],'','This is an agent-authored development set. No human or independent reviewer has verified semantic citation support. Literal quote equality and gold passage alignment are distinct mechanical checks.','', '| Metric | Raw count | Percent |','| --- | --- | --- |']
     for name,value in metrics.items():
         if isinstance(value,dict):
@@ -98,5 +98,5 @@ def evaluate(root):
     for row in failures:
         lines += ['- {}: {} Expected passages: {}. Retrieved: {}. Outcome: {}. Inspect the raw result before changing retrieval.'.format(row['id'],row['question'],', '.join(row['gold_passage_ids']),', '.join(h['passage_id'] for h in row['result']['retrieved']),row['result']['reason'])]
     lines += ['', 'Further limits: synthetic narrative data, no table answers, no learned embeddings, only explicit scope checks, and heuristic lexical abstention. An exact quote can still be irrelevant to a question. Comparison output juxtaposes passages and does not establish causal or numerical change. See VALIDATION.md for adversarial cases and verification commands.','']
-    (root/'evaluation/REPORT.md').write_text('\n'.join(lines))
+    if write:(root/'evaluation/REPORT.md').write_text('\n'.join(lines))
     return report

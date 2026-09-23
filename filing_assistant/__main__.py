@@ -28,7 +28,7 @@ def main(argv=None):
     ask.add_argument('--compare',action='store_true',help='Require exactly two filings and evidence from each')
     ask.add_argument('--method',choices=['bm25','semantic','hybrid'],default='bm25')
     ask.add_argument('--json',action='store_true')
-    commands.add_parser('evaluate',help='Run frozen bundled evaluation and write reports')
+    commands.add_parser('evaluate',help='Run frozen bundled evaluation; --write rewrites reports').add_argument('--write',action='store_true',help='Rewrite evaluation/results.json and REPORT.md')
     fetch=commands.add_parser('fetch-sec',help='Optional network operation into a new corpus folder')
     fetch.add_argument('--cik',action='append',required=True)
     fetch.add_argument('--as-of',required=True)
@@ -80,7 +80,7 @@ def main(argv=None):
                         print('[{} | {} | report {} | filed {} | {} | {}]({})'.format(c['company'],c['form'],c['report_period'],c['filing_date'],c['section'],c['accession'],target))
                 print('\n'+result['support_assessment'])
         elif args.command=='evaluate':
-            report=evaluate(args.corpus)
+            report=evaluate(args.corpus,args.write)
             print(json.dumps({'dataset_size':report['dataset_size'],'metrics':report['metrics']},indent=2))
         return 0
     except (ValueError,OSError,KeyError,TypeError) as error:
