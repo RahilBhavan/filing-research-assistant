@@ -28,7 +28,7 @@ Started September 22, 2026.
 ## 4. GitHub publication
 
 - Initialize a Git repository, review the complete diff, and commit a reproducible release candidate.
-- Create a private GitHub repository by default to avoid unexpectedly publishing the bundled filing captures.
+- Publish the repository. Done: it is public as `RahilBhavan/filing-research-assistant`, including the bundled SEC filing captures.
 - Push the default branch and report the repository URL and any remaining human release gate.
 
 ## Completion criteria

@@ -35,4 +35,4 @@ Design an improvement on paper first: a synonym rule, a section preference, or a
 
 ## Suggested interview demonstration
 
-Show a direct answer, a period-sensitive answer, a comparison, and an abstention. Open a citation's local HTML file. Explain the documented SEC access failure and why fixture CIKs and source URLs are null. Describe the failed paraphrases and show their raw retrieval results. You can discuss architecture and evaluation honestly without claiming the prototype has been validated for real financial research.
+Show a direct answer, a period-sensitive answer, a comparison, and an abstention. Open a citation's local HTML file. Explain why fixture CIKs and source URLs are null: the fixtures are synthetic. SEC access now works; the real corpus in `corpora/sec` links to official SEC URLs, and `fetch-sec` downloads new filings when `SEC_USER_AGENT` is set. Describe the failed paraphrases and show their raw retrieval results. You can discuss architecture and evaluation honestly without claiming the prototype has been validated for real financial research.

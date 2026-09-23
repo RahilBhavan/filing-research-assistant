@@ -1,10 +1,10 @@
-# Validation — September 21, 2026
+# Validation — September 21, 2026 (updated September 23, 2026)
 
 All commands below ran from the project directory unless stated otherwise. The real evaluation is separate from the preserved synthetic benchmark.
 
 | Check | Command / action | Exit | Result |
 |---|---|---:|---|
-| Regression and evidence tests | `python3 -m unittest discover -s tests -q` | 0 | 67 tests passed, including original 41 |
+| Regression and evidence tests | `python3 -m unittest discover -s tests -q` | 0 | 69 tests passed, including original 41 |
 | Source/index integrity | Covered by `test_sources_and_frozen_index_match_rebuild` | 0 | Raw hashes, frozen questions, and rebuilt index match |
 | Development comparison | `python3 -m filing_assistant.real_eval dev` | 0 | Baseline plus BM25, LSA and hybrid measured on 30 questions; prints only, `--write` rewrites `dev-results.json` |
 | Held-out comparison (v1, archival) | `python3 -m filing_assistant.real_eval heldout` | 1 | Prints "v1 frozen results are archival and cannot be reproduced from this repo; run heldout-v2". The v1 selection hashes match no commit, so `heldout-results.json` is kept only as a record |
@@ -18,7 +18,7 @@ All commands below ran from the project directory unless stated otherwise. The r
 | Browser interface | Real answer, source dialog, comparison, prediction abstention | n/a | Expected content visible; no console errors observed |
 | Visual review | Desktop comparison screenshot | n/a | Two readable source cards shown side by side |
 
-The local API check required network sandbox permission to contact localhost. The server required permission to bind its localhost port. The first isolated package build could not download `setuptools` because this environment has no PyPI network access; the compatibility fallback using installed setuptools then built successfully. No external publishing occurred yet.
+The local API check required network sandbox permission to contact localhost. The server required permission to bind its localhost port. The first isolated package build could not download `setuptools` because this environment has no PyPI network access; the compatibility fallback using installed setuptools then built successfully. The repository has since been published publicly as `RahilBhavan/filing-research-assistant`.
 
 ## Measured limitations
 
