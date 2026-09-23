@@ -7,3 +7,5 @@ build/
 *.egg-info/
 review.csv
 refreshed-sec-corpus/
+.venv/
+.DS_Store
