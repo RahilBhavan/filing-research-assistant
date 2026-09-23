@@ -65,6 +65,19 @@ class RealCorpusTests(unittest.TestCase):
     def test_exact_us_employee_count_abstains(self):
         r=self.ask('What was the exact number of employees based in the U.S.?','docu-k')
         self.assertEqual(r['status'],'abstained');self.assertEqual(r['answer'],[])
+    def test_vague_basic_questions_abstain(self):
+        for question,reason in [
+            ('How many employees does Docusign have?','no_count_of_requested_noun'),
+            ('What was total revenue in fiscal 2026?','no_currency_amount_in_evidence'),
+            ('Did revenue decrease?','no_realized_change_in_evidence'),
+            ('revenue','too_few_question_terms'),
+        ]:
+            with self.subTest(question=question):
+                r=self.engine.ask(question,Scope('DOCU',form='10-K'))
+                self.assertEqual((r['status'],r['reason']),('abstained',reason));self.assertEqual(r['answer'],[])
+    def test_count_requires_number_next_to_noun(self):
+        self.assertEqual(evidence_error('How many employees do we have?','Employees volunteered 140,000 hours and gave $25 million in employee donations.',{'employee'},1),'no_count_of_requested_noun')
+        self.assertIsNone(evidence_error('How many employees do we have?','We had 7,044 full-time employees.',{'employee'},1))
     def test_known_answerable_language_variants(self):
         cases=[
             ('Did any single customer account for more than 10% of total revenue?','docu-k',False,()),

@@ -43,6 +43,8 @@ The original frozen held-out result is preserved as version 1. After correctness
 
 Quantity/date/cause checks remain heuristic. Exact quotation does not guarantee answer relevance, and human semantic-support validation has not been performed. The original frozen results remain unchanged; post-fix results are recorded separately as `heldout-v2-results.json`.
 
+The evidence gates are hand-tuned regex heuristics fitted to this 60-question set. Expect misses and wrong abstentions on other question wording.
+
 [Read the full benchmark and failure list](evaluation/real/REPORT.md). [See the completed plan](IMPROVEMENT-PLAN.md).
 
 ## CLI and verification

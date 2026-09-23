@@ -27,10 +27,23 @@ def evidence_error(question, text, terms, coverage):
         if routes<2:return 'incomplete_channel_list'
     if re.search(r'compare.*cash (?:and cash )?equivalents', lower) and not re.search(r'cash and cash equivalents of \$[\d,.]+',text,re.I):
         return 'no_cash_balance_in_evidence'
+    count=re.search(r'how many\s+(.+?)\s+(?:do|does|did|are|were|is|was|have|has|had)\b',lower)
+    if count:
+        # The number must count the asked-about noun, not any figure in the passage.
+        head=count.group(1).split()[-1].rstrip('s')
+        if not re.search(r'(?<![\w.$])\d[\d,]*(?:\.\d+)?(?:\s+(?:million|billion|thousand))?(?:\s+(?!(?:in|of|by|for|to|per|from)\b)[\w-]+){0,2}?\s+'+re.escape(head)+r's?\b',source):
+            return 'no_count_of_requested_noun'
+    change=re.match(r'\s*did\s+(.+?)\s+(?:increase|decrease|decline|grow|rise|fall)\b',lower)
+    if change:
+        # A yes/no change question needs a sentence stating that change for its subject, not a risk scenario.
+        subject=change.group(1).split()[-1].rstrip('s')
+        if not any(re.search(r'\b'+re.escape(subject)+r's?\b[^.;]*\b(?:increased|decreased|declined|grew|rose|fell)\b',s) and not re.search(r'\b(?:could|may|might|would|any)\b',s)
+                   for s in re.split(r'(?<=[.!?])\s+',source)):
+            return 'no_realized_change_in_evidence'
     numeric=bool(re.search(r'how (?:much|many)|what (?:was|is|were).*(?:number|amount|percentage|percent|total liquidity)|what (?:share|proportion)',lower))
     if numeric and not re.search(r'\d',text):
         return 'no_quantity_in_evidence'
-    currency=bool(re.search(r'\$|\b(?:dollars?|usd)\b|how much.*(?:cost|expense|revenue|cash|liquidity)',lower))
+    currency=bool(re.search(r'\$|\b(?:dollars?|usd)\b|(?:how much|what (?:was|were|is|are) (?:the )?(?:total|net)\b).*(?:cost|expense|revenue|cash|liquidity)',lower))
     if currency and not re.search(r'\$\s*\d|\d[\d,.]*\s*(?:million |billion )?(?:dollars?|USD)',text,re.I):
         return 'no_currency_amount_in_evidence'
     if re.search(r'\b(?:why|caused|causes|reasons)\b',lower):
@@ -83,6 +96,9 @@ class ResearchEngine(Engine):
             result['reason']='unsupported_prediction_or_advice';return result
         terms=self.query_terms(question)
         if not terms:result['reason']='no_searchable_terms';return result
+        # Company names count here: 'revenue' alone is too vague, 'Docusign employees' is not.
+        if len({t for t in tokens(question) if t not in QUESTION_FILLER and len(t)>1 and not t.isdigit()})<2:
+            result['reason']='too_few_question_terms';return result
         groups=[]
         for d in sorted(docs,key=lambda d:d['report_period']):
             candidates=[p for p in self.passages if p['accession']==d['accession'] and (not scope.section or p['section']==scope.section)]
