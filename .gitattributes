@@ -1,0 +1,2 @@
+# Preserve downloaded filing bytes so manifest SHA-256 checks remain portable.
+corpora/sec/data/raw/*.html -text
