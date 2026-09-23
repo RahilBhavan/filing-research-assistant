@@ -9,7 +9,7 @@ A small Python CLI that finds narrative passages, quotes them with provenance, a
 Open a terminal in this project folder:
 
 ```sh
-cd /Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant
+cd <project-dir>
 python3 -m filing_assistant ingest
 python3 -m filing_assistant list
 python3 -m filing_assistant ask 'What caused subscription revenue growth?' --company NSTR --form 10-K

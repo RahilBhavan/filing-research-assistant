@@ -1,7 +1,7 @@
 {
   "python_version": "3.9.6",
   "platform": "macOS-27.0-arm64-arm-64bit",
-  "cwd": "/Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant",
+  "cwd": "<project-dir>",
   "commands": [
     {
       "command": [
@@ -52,7 +52,7 @@
         "10-K"
       ],
       "exit_status": 0,
-      "stdout": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.\nSelected narrative evidence:\n\n> For the year ended December 31, 2025, subscription revenue grew because existing customers purchased additional user seats. New customer sales also contributed to revenue growth.\n[Northstar Software | 10-K | report 2025-12-31 | filed 2026-02-20 | mda | fixture-nstr-k](file:///Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant/data/raw/nstr-k.html#nstr-k-revenue)\n\nExact extract only; lexical relevance is heuristic, not human-verified semantic support.\n",
+      "stdout": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.\nSelected narrative evidence:\n\n> For the year ended December 31, 2025, subscription revenue grew because existing customers purchased additional user seats. New customer sales also contributed to revenue growth.\n[Northstar Software | 10-K | report 2025-12-31 | filed 2026-02-20 | mda | fixture-nstr-k](file://<project-dir>/data/raw/nstr-k.html#nstr-k-revenue)\n\nExact extract only; lexical relevance is heuristic, not human-verified semantic support.\n",
       "stderr": ""
     },
     {
@@ -68,7 +68,7 @@
         "10-Q"
       ],
       "exit_status": 0,
-      "stdout": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.\nSelected narrative evidence:\n\n> The largest distributor represented 27 percent of quarterly revenue for the three months ended December 31, 2025. Annual and quarterly percentages cover different periods.\n[Harbor Manufacturing | 10-Q | report 2025-12-31 | filed 2026-02-06 | mda | fixture-hbrm-q](file:///Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant/data/raw/hbrm-q.html#hbrm-q-concentration)\n\nExact extract only; lexical relevance is heuristic, not human-verified semantic support.\n",
+      "stdout": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.\nSelected narrative evidence:\n\n> The largest distributor represented 27 percent of quarterly revenue for the three months ended December 31, 2025. Annual and quarterly percentages cover different periods.\n[Harbor Manufacturing | 10-Q | report 2025-12-31 | filed 2026-02-06 | mda | fixture-hbrm-q](file://<project-dir>/data/raw/hbrm-q.html#hbrm-q-concentration)\n\nExact extract only; lexical relevance is heuristic, not human-verified semantic support.\n",
       "stderr": ""
     },
     {
@@ -83,7 +83,7 @@
         "--compare"
       ],
       "exit_status": 0,
-      "stdout": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.\nSelected narrative evidence by filing; no calculated change:\n\n> Hosting costs increased during 2025 because customers stored more documents. The company also incurred migration expenses while moving workloads to a new cloud region.\n[Northstar Software | 10-K | report 2025-12-31 | filed 2026-02-20 | mda | fixture-nstr-k](file:///Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant/data/raw/nstr-k.html#nstr-k-costs)\n\n> Hosting costs decreased during the quarter because a cloud contract renegotiation lowered storage rates. Migration expenses ended in February 2026.\n[Northstar Software | 10-Q | report 2026-03-31 | filed 2026-05-08 | mda | fixture-nstr-q](file:///Users/rbhavan/Documents/Codex/2026-09-21/set-up-a-learning-and-build-3/outputs/filing-assistant/data/raw/nstr-q.html#nstr-q-costs)\n\nExact extract only; lexical relevance is heuristic, not human-verified semantic support.\n",
+      "stdout": "SYNTHETIC LEARNING FIXTURES. Fictional companies and invented disclosures. Not SEC filings or investment evidence.\nSelected narrative evidence by filing; no calculated change:\n\n> Hosting costs increased during 2025 because customers stored more documents. The company also incurred migration expenses while moving workloads to a new cloud region.\n[Northstar Software | 10-K | report 2025-12-31 | filed 2026-02-20 | mda | fixture-nstr-k](file://<project-dir>/data/raw/nstr-k.html#nstr-k-costs)\n\n> Hosting costs decreased during the quarter because a cloud contract renegotiation lowered storage rates. Migration expenses ended in February 2026.\n[Northstar Software | 10-Q | report 2026-03-31 | filed 2026-05-08 | mda | fixture-nstr-q](file://<project-dir>/data/raw/nstr-q.html#nstr-q-costs)\n\nExact extract only; lexical relevance is heuristic, not human-verified semantic support.\n",
       "stderr": ""
     },
     {
