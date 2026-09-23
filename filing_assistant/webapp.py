@@ -57,7 +57,9 @@ def make_handler(corpus):
                 n=int(self.headers.get('Content-Length','0'))
                 if not 0<n<=8192:raise ValueError('Request must be 1–8192 bytes')
                 if self.headers.get('Content-Type','').split(';')[0]!='application/json':raise ValueError('JSON required')
-                body=json.loads(self.rfile.read(n));q=body['question'];scope=body['scope'];compare=body.get('compare',False);method=body.get('method','bm25')
+                body=json.loads(self.rfile.read(n))
+                if not isinstance(body,dict):raise ValueError('JSON object required')
+                q=body['question'];scope=body['scope'];compare=body.get('compare',False);method=body.get('method','bm25')
                 if not isinstance(q,str) or not q.strip() or len(q)>1000:raise ValueError('Enter a question of 1–1000 characters')
                 if not isinstance(scope,dict) or set(scope)-{'company','accessions','section'}:raise ValueError('Invalid scope')
                 if not isinstance(scope.get('company'),str):raise ValueError('Select a company')
@@ -68,15 +70,19 @@ def make_handler(corpus):
                 self.send(200,engines[method].ask(q.strip(),Scope(**scope),compare))
             except (ValueError,KeyError,TypeError) as e:
                 LOG.warning('Rejected API request path=%s error_type=%s',self.path,type(e).__name__)
-                self.send(400,{'error':str(e)})
+                # Only our own ValueError messages are shown; parser and key errors stay generic.
+                self.send(400,{'error':str(e) if type(e) is ValueError else 'Invalid request'})
         def log_message(self,format,*args):
             # Do not log user questions or source payloads.
             return
     return Handler
 
+class Server(ThreadingHTTPServer):
+    request_queue_size=64
+
 def serve(corpus,port=8765):
     logging.basicConfig(level=logging.INFO,format='%(asctime)s %(levelname)s %(name)s %(message)s')
-    server=ThreadingHTTPServer(('127.0.0.1',port),make_handler(corpus))
+    server=Server(('127.0.0.1',port),make_handler(corpus))
     LOG.info('Server started host=127.0.0.1 port=%s corpus=%s',server.server_port,Path(corpus).resolve())
     print('Filing research: http://127.0.0.1:'+str(server.server_port),flush=True)
     try:server.serve_forever()
