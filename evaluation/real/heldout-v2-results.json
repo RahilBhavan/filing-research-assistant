@@ -3150,41 +3150,10 @@
           "result": {
             "question": "What was the exact number of employees based in the U.S.?",
             "status": "abstained",
-            "reason": "no_quantity_in_evidence",
+            "reason": "too_few_question_terms",
             "source_notice": "Real SEC filings. Narrative excerpts only: Business, MD&A and Risk Factors. Financial tables are excluded. Evidence is extractive and requires review.",
             "answer": [],
-            "retrieved": [
-              {
-                "passage_id": "docu-k-237-0",
-                "accession": "0001261333-26-000021",
-                "score": 4.533853,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-37-0",
-                "accession": "0001261333-26-000021",
-                "score": 4.259303,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-181-0",
-                "accession": "0001261333-26-000021",
-                "score": 4.186863,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-101-0",
-                "accession": "0001261333-26-000021",
-                "score": 4.151559,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-74-0",
-                "accession": "0001261333-26-000021",
-                "score": 4.14285,
-                "query_term_coverage": 1.0
-              }
-            ],
+            "retrieved": [],
             "method": "bm25",
             "support_assessment": "Exact excerpts with heuristic topic, quantity, date and cause checks. Not human-verified semantic support."
           }
@@ -5015,41 +4984,10 @@
           "result": {
             "question": "What was the exact number of employees based in the U.S.?",
             "status": "abstained",
-            "reason": "no_quantity_in_evidence",
+            "reason": "too_few_question_terms",
             "source_notice": "Real SEC filings. Narrative excerpts only: Business, MD&A and Risk Factors. Financial tables are excluded. Evidence is extractive and requires review.",
             "answer": [],
-            "retrieved": [
-              {
-                "passage_id": "docu-k-181-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.753616,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-101-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.721489,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-182-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.654533,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-74-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.592064,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-215-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.589243,
-                "query_term_coverage": 1.0
-              }
-            ],
+            "retrieved": [],
             "method": "semantic",
             "support_assessment": "Exact excerpts with heuristic topic, quantity, date and cause checks. Not human-verified semantic support."
           }
@@ -6902,41 +6840,10 @@
           "result": {
             "question": "What was the exact number of employees based in the U.S.?",
             "status": "abstained",
-            "reason": "no_quantity_in_evidence",
+            "reason": "too_few_question_terms",
             "source_notice": "Real SEC filings. Narrative excerpts only: Business, MD&A and Risk Factors. Financial tables are excluded. Evidence is extractive and requires review.",
             "answer": [],
-            "retrieved": [
-              {
-                "passage_id": "docu-k-181-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.032266,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-101-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.031754,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-237-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.031099,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-37-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.031054,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-74-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.03101,
-                "query_term_coverage": 1.0
-              }
-            ],
+            "retrieved": [],
             "method": "hybrid",
             "support_assessment": "Exact excerpts with heuristic topic, quantity, date and cause checks. Not human-verified semantic support."
           }

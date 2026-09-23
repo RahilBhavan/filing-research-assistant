@@ -3532,10 +3532,10 @@
         "answerable": 20,
         "unsupported": 10,
         "retrieval_complete": 16,
-        "gold_answer_complete": 11,
+        "gold_answer_complete": 12,
         "unsupported_abstained": 10,
         "false_abstentions": 5,
-        "incorrect_answers": 4,
+        "incorrect_answers": 3,
         "answered": 15,
         "exact_excerpts": 15,
         "excerpts": 15,
@@ -3548,7 +3548,7 @@
           "id": "r01",
           "question": "How many employees did Docusign have?",
           "answerable": true,
-          "outcome": "answer_not_gold_complete",
+          "outcome": "gold_complete",
           "gold": [
             "docu-k-68-0"
           ],
@@ -3559,9 +3559,9 @@
             "source_notice": "Real SEC filings. Narrative excerpts only: Business, MD&A and Risk Factors. Financial tables are excluded. Evidence is extractive and requires review.",
             "answer": [
               {
-                "excerpt": "employees have volunteered more than 140,000 hours collectively, including at organizations promoting healthier forests, echoing our company-wide commitment to environmental programs. Additionally, we match funds given by our employees to qualifying nonprofits. To date, we have mobilized $25 million in employee donations and company match, supporting approximately 10,700 organizations.",
+                "excerpt": "We are a global organization with an increasingly international footprint. As we continue to grow in new markets, we anticipate continuing to recruit in new geographies. As of January 31, 2026, we had 7,044 employees, of which approximately 60% were based in the U.S. and the remainder in international locations. None of our U.S. employees are represented by a labor union with respect to their employment with us. Employees in some other countries are represented by workers' councils or participate in collective bargaining arrangements at the national and/or industry level. We have not experienced any work stoppages. We consider our relations with our employees to be positive, and we measure employee satisfaction through bi-annual engagement surveys.",
                 "citation": {
-                  "passage_id": "docu-k-74-0",
+                  "passage_id": "docu-k-68-0",
                   "company": "Docusign, Inc.",
                   "ticker": "DOCU",
                   "cik": "0001261333",
@@ -3574,8 +3574,8 @@
                   "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000021/docu-20260131.htm",
                   "local_path": "data/raw/docu-k.html",
                   "sha256": "9b53b918797babeddaa816fa14d47698cdf2b25863ee3e1feab5a2da2612572b",
-                  "start_char": 37128,
-                  "end_char": 37516,
+                  "start_char": 33622,
+                  "end_char": 34380,
                   "anchor": "ica66f868aaba4368a06df1fa9500dcaa_25"
                 }
               }
@@ -3584,31 +3584,31 @@
               {
                 "passage_id": "docu-k-74-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.653616,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-70-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.544068,
+                "score": 0.592064,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-k-37-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.5234,
+                "score": 0.521848,
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "docu-k-73-0",
+                "passage_id": "docu-k-70-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.508785,
+                "score": 0.510253,
+                "query_term_coverage": 1.0
+              },
+              {
+                "passage_id": "docu-k-69-0",
+                "accession": "0001261333-26-000021",
+                "score": 0.476493,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-k-68-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.47643,
+                "score": 0.450066,
                 "query_term_coverage": 1.0
               }
             ],
@@ -3656,31 +3656,31 @@
               {
                 "passage_id": "docu-k-74-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.653616,
-                "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-70-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.544068,
+                "score": 0.592064,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-k-37-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.5234,
+                "score": 0.521848,
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "docu-k-73-0",
+                "passage_id": "docu-k-70-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.508785,
+                "score": 0.510253,
+                "query_term_coverage": 1.0
+              },
+              {
+                "passage_id": "docu-k-69-0",
+                "accession": "0001261333-26-000021",
+                "score": 0.476493,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-k-68-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.47643,
+                "score": 0.450066,
                 "query_term_coverage": 1.0
               }
             ],
@@ -3706,31 +3706,31 @@
               {
                 "passage_id": "docu-k-11-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.498278,
+                "score": 0.504896,
                 "query_term_coverage": 0.25
               },
               {
                 "passage_id": "docu-k-12-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.460884,
+                "score": 0.4449,
                 "query_term_coverage": 0.5
+              },
+              {
+                "passage_id": "docu-k-39-0",
+                "accession": "0001261333-26-000021",
+                "score": 0.393718,
+                "query_term_coverage": 0.25
               },
               {
                 "passage_id": "docu-k-36-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.45972,
+                "score": 0.373131,
                 "query_term_coverage": 0.25
               },
               {
                 "passage_id": "docu-k-29-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.364998,
-                "query_term_coverage": 0.25
-              },
-              {
-                "passage_id": "docu-k-39-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.364978,
+                "score": 0.356402,
                 "query_term_coverage": 0.25
               }
             ],
@@ -3778,32 +3778,32 @@
               {
                 "passage_id": "docu-k-33-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.795918,
+                "score": 0.757135,
                 "query_term_coverage": 0.25
               },
               {
                 "passage_id": "docu-k-25-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.670817,
+                "score": 0.628381,
                 "query_term_coverage": 0.5
               },
               {
-                "passage_id": "docu-k-44-0",
+                "passage_id": "docu-k-45-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.670179,
-                "query_term_coverage": 0.75
+                "score": 0.616158,
+                "query_term_coverage": 0.5
               },
               {
                 "passage_id": "docu-k-76-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.599468,
+                "score": 0.596089,
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "docu-k-82-0",
+                "passage_id": "docu-k-44-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.567247,
-                "query_term_coverage": 0.25
+                "score": 0.578549,
+                "query_term_coverage": 0.75
               }
             ],
             "method": "semantic",
@@ -3850,31 +3850,31 @@
               {
                 "passage_id": "docu-q-35-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.723189,
+                "score": 0.736145,
                 "query_term_coverage": 1.0
+              },
+              {
+                "passage_id": "docu-q-42-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.622197,
+                "query_term_coverage": 0.667
               },
               {
                 "passage_id": "docu-q-40-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.606104,
+                "score": 0.614719,
                 "query_term_coverage": 0.667
               },
               {
                 "passage_id": "docu-q-39-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.587268,
+                "score": 0.5949,
                 "query_term_coverage": 0.667
               },
               {
-                "passage_id": "docu-q-42-0",
+                "passage_id": "docu-q-44-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.577256,
-                "query_term_coverage": 0.667
-              },
-              {
-                "passage_id": "docu-q-22-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.548131,
+                "score": 0.543578,
                 "query_term_coverage": 0.667
               }
             ],
@@ -3922,31 +3922,31 @@
               {
                 "passage_id": "docu-q-35-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.726635,
+                "score": 0.737994,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-q-20-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.66681,
+                "score": 0.652344,
                 "query_term_coverage": 0.75
               },
               {
                 "passage_id": "docu-q-39-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.581646,
+                "score": 0.624145,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-q-40-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.557264,
+                "score": 0.588209,
                 "query_term_coverage": 0.5
               },
               {
-                "passage_id": "docu-q-22-0",
+                "passage_id": "docu-q-42-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.44754,
+                "score": 0.490484,
                 "query_term_coverage": 0.5
               }
             ],
@@ -3994,32 +3994,32 @@
               {
                 "passage_id": "i90cfb5dfe62e40ebacce526d1fba41bb_85",
                 "accession": "0001261333-26-000099",
-                "score": 0.543573,
+                "score": 0.610177,
                 "query_term_coverage": 0.333
               },
               {
                 "passage_id": "docu-q-22-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.53613,
+                "score": 0.513104,
+                "query_term_coverage": 0.333
+              },
+              {
+                "passage_id": "docu-q-3-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.512997,
+                "query_term_coverage": 0.333
+              },
+              {
+                "passage_id": "docu-q-29-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.499208,
                 "query_term_coverage": 0.333
               },
               {
                 "passage_id": "docu-q-73-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.496028,
+                "score": 0.485226,
                 "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-q-29-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.488727,
-                "query_term_coverage": 0.333
-              },
-              {
-                "passage_id": "docu-q-14-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.468264,
-                "query_term_coverage": 0.667
               }
             ],
             "method": "semantic",
@@ -4066,31 +4066,31 @@
               {
                 "passage_id": "docu-q-73-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.505464,
+                "score": 0.570645,
                 "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-q-13-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.468115,
-                "query_term_coverage": 0.25
-              },
-              {
-                "passage_id": "docu-q-14-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.446963,
-                "query_term_coverage": 0.5
               },
               {
                 "passage_id": "docu-q-10-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.434837,
+                "score": 0.471372,
                 "query_term_coverage": 0.25
               },
               {
-                "passage_id": "docu-q-4-0",
+                "passage_id": "docu-q-13-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.415484,
+                "score": 0.456646,
+                "query_term_coverage": 0.25
+              },
+              {
+                "passage_id": "docu-q-11-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.411929,
+                "query_term_coverage": 0.25
+              },
+              {
+                "passage_id": "docu-q-2-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.411309,
                 "query_term_coverage": 0.25
               }
             ],
@@ -4157,32 +4157,32 @@
               {
                 "passage_id": "ib1b89345a4364fb69d7ce3189f67b705_16",
                 "accession": "0001628280-26-012906",
-                "score": 0.792608,
+                "score": 0.842225,
                 "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "ain-k-4-0",
-                "accession": "0001628280-26-012906",
-                "score": 0.772005,
-                "query_term_coverage": 0.6
               },
               {
                 "passage_id": "ain-k-55-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.685565,
+                "score": 0.769989,
                 "query_term_coverage": 0.4
               },
               {
-                "passage_id": "ain-k-5-0",
+                "passage_id": "ain-k-4-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.679589,
+                "score": 0.673419,
+                "query_term_coverage": 0.6
+              },
+              {
+                "passage_id": "ain-k-15-0",
+                "accession": "0001628280-26-012906",
+                "score": 0.668807,
+                "query_term_coverage": 0.4
+              },
+              {
+                "passage_id": "ain-k-56-0",
+                "accession": "0001628280-26-012906",
+                "score": 0.642272,
                 "query_term_coverage": 0.2
-              },
-              {
-                "passage_id": "ain-k-2-0",
-                "accession": "0001628280-26-012906",
-                "score": 0.612426,
-                "query_term_coverage": 0.4
               }
             ],
             "method": "semantic",
@@ -4229,32 +4229,32 @@
               {
                 "passage_id": "ain-k-24-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.78095,
+                "score": 0.828809,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "ain-k-5-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.713646,
+                "score": 0.710558,
                 "query_term_coverage": 0.6
-              },
-              {
-                "passage_id": "ain-k-4-0",
-                "accession": "0001628280-26-012906",
-                "score": 0.712824,
-                "query_term_coverage": 0.4
               },
               {
                 "passage_id": "ain-k-14-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.690162,
+                "score": 0.697895,
                 "query_term_coverage": 0.4
               },
               {
-                "passage_id": "ib1b89345a4364fb69d7ce3189f67b705_16-part0",
+                "passage_id": "ain-k-4-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.686686,
-                "query_term_coverage": 1.0
+                "score": 0.677477,
+                "query_term_coverage": 0.4
+              },
+              {
+                "passage_id": "ain-k-26-0",
+                "accession": "0001628280-26-012906",
+                "score": 0.670475,
+                "query_term_coverage": 0.6
               }
             ],
             "method": "semantic",
@@ -4272,38 +4272,38 @@
           "result": {
             "question": "What share of worldwide monofilament requirements does the Homer facility supply?",
             "status": "abstained",
-            "reason": "question_details_not_supported",
+            "reason": "insufficient_topic_support",
             "source_notice": "Real SEC filings. Narrative excerpts only: Business, MD&A and Risk Factors. Financial tables are excluded. Evidence is extractive and requires review.",
             "answer": [],
             "retrieved": [
               {
+                "passage_id": "ain-k-10-0",
+                "accession": "0001628280-26-012906",
+                "score": 0.504052,
+                "query_term_coverage": 0.333
+              },
+              {
                 "passage_id": "ain-k-24-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.574222,
+                "score": 0.48726,
                 "query_term_coverage": 0.833
+              },
+              {
+                "passage_id": "ain-k-65-0",
+                "accession": "0001628280-26-012906",
+                "score": 0.375107,
+                "query_term_coverage": 0.0
               },
               {
                 "passage_id": "ain-k-9-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.515975,
-                "query_term_coverage": 0.167
-              },
-              {
-                "passage_id": "ain-k-16-0",
-                "accession": "0001628280-26-012906",
-                "score": 0.357756,
-                "query_term_coverage": 0.167
-              },
-              {
-                "passage_id": "ain-k-25-0",
-                "accession": "0001628280-26-012906",
-                "score": 0.345779,
+                "score": 0.346543,
                 "query_term_coverage": 0.167
               },
               {
                 "passage_id": "ain-k-66-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.316965,
+                "score": 0.295653,
                 "query_term_coverage": 0.167
               }
             ],
@@ -4330,32 +4330,32 @@
               {
                 "passage_id": "ib1b89345a4364fb69d7ce3189f67b705_67",
                 "accession": "0001628280-26-012906",
-                "score": 0.522211,
+                "score": 0.569294,
                 "query_term_coverage": 0.5
               },
               {
                 "passage_id": "ain-q-77-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.522211,
+                "score": 0.569294,
                 "query_term_coverage": 0.5
               },
               {
                 "passage_id": "ain-k-294-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.444986,
+                "score": 0.534985,
                 "query_term_coverage": 0.0
               },
               {
                 "passage_id": "ain-q-83-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.463131,
+                "score": 0.511193,
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "ain-k-297-0",
+                "passage_id": "ain-k-295-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.387973,
-                "query_term_coverage": 0.5
+                "score": 0.46449,
+                "query_term_coverage": 0.0
               }
             ],
             "method": "semantic",
@@ -4374,39 +4374,39 @@
           "result": {
             "question": "Compare cash and cash equivalents disclosed in the two filings.",
             "status": "abstained",
-            "reason": "insufficient_topic_support",
+            "reason": "no_cash_balance_in_evidence",
             "source_notice": "Real SEC filings. Narrative excerpts only: Business, MD&A and Risk Factors. Financial tables are excluded. Evidence is extractive and requires review.",
             "answer": [],
             "retrieved": [
               {
-                "passage_id": "ain-k-294-0",
+                "passage_id": "ain-k-297-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.551171,
-                "query_term_coverage": 0.5
+                "score": 0.559312,
+                "query_term_coverage": 1.0
               },
               {
                 "passage_id": "ain-q-83-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.6002,
+                "score": 0.597922,
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "ain-k-291-0",
+                "passage_id": "ain-k-293-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.520857,
+                "score": 0.520008,
                 "query_term_coverage": 0.5
               },
               {
                 "passage_id": "ain-q-56-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.501811,
+                "score": 0.530232,
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "ain-k-297-0",
+                "passage_id": "ain-k-291-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.520632,
-                "query_term_coverage": 1.0
+                "score": 0.518352,
+                "query_term_coverage": 0.5
               }
             ],
             "method": "semantic",
@@ -4453,31 +4453,31 @@
               {
                 "passage_id": "ain-q-53-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.661182,
+                "score": 0.599137,
                 "query_term_coverage": 0.8
               },
               {
                 "passage_id": "ain-q-50-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.630947,
+                "score": 0.591025,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "ain-q-49-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.482455,
+                "score": 0.457406,
                 "query_term_coverage": 0.6
               },
               {
                 "passage_id": "ain-q-52-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.472855,
+                "score": 0.452135,
                 "query_term_coverage": 0.4
               },
               {
                 "passage_id": "ain-q-76-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.465268,
+                "score": 0.412633,
                 "query_term_coverage": 0.6
               }
             ],
@@ -4525,31 +4525,31 @@
               {
                 "passage_id": "ain-q-53-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.661182,
+                "score": 0.599137,
                 "query_term_coverage": 0.8
               },
               {
                 "passage_id": "ain-q-50-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.630947,
+                "score": 0.591025,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "ain-q-49-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.482455,
+                "score": 0.457406,
                 "query_term_coverage": 0.6
               },
               {
                 "passage_id": "ain-q-52-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.472855,
+                "score": 0.452135,
                 "query_term_coverage": 0.4
               },
               {
                 "passage_id": "ain-q-76-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.465268,
+                "score": 0.412633,
                 "query_term_coverage": 0.6
               }
             ],
@@ -4597,31 +4597,31 @@
               {
                 "passage_id": "docu-q-22-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.661928,
+                "score": 0.642462,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-q-31-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.536022,
+                "score": 0.604612,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-q-40-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.414874,
+                "score": 0.491844,
                 "query_term_coverage": 0.5
               },
               {
                 "passage_id": "docu-q-39-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.412632,
+                "score": 0.462333,
                 "query_term_coverage": 0.5
               },
               {
-                "passage_id": "docu-q-35-0",
+                "passage_id": "i90cfb5dfe62e40ebacce526d1fba41bb_85",
                 "accession": "0001261333-26-000099",
-                "score": 0.396759,
+                "score": 0.439968,
                 "query_term_coverage": 0.5
               }
             ],
@@ -4667,33 +4667,33 @@
             ],
             "retrieved": [
               {
-                "passage_id": "docu-q-16-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.838191,
-                "query_term_coverage": 1.0
-              },
-              {
                 "passage_id": "docu-q-34-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.819726,
+                "score": 0.832319,
                 "query_term_coverage": 0.75
+              },
+              {
+                "passage_id": "docu-q-16-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.831467,
+                "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-q-33-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.790415,
+                "score": 0.79139,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-q-38-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.786324,
+                "score": 0.791257,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-q-31-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.742938,
+                "score": 0.776468,
                 "query_term_coverage": 1.0
               }
             ],
@@ -4741,32 +4741,32 @@
               {
                 "passage_id": "docu-k-55-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.624302,
+                "score": 0.64951,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-k-49-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.607691,
+                "score": 0.620603,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-k-21-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.57951,
+                "score": 0.599363,
+                "query_term_coverage": 0.5
+              },
+              {
+                "passage_id": "docu-k-3-0",
+                "accession": "0001261333-26-000021",
+                "score": 0.576552,
                 "query_term_coverage": 0.5
               },
               {
                 "passage_id": "docu-k-48-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.562467,
+                "score": 0.576139,
                 "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-3-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.530671,
-                "query_term_coverage": 0.5
               }
             ],
             "method": "semantic",
@@ -4813,32 +4813,32 @@
               {
                 "passage_id": "docu-k-2-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.703244,
+                "score": 0.6562,
                 "query_term_coverage": 0.75
               },
               {
                 "passage_id": "docu-k-47-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.511369,
+                "score": 0.550185,
                 "query_term_coverage": 0.25
-              },
-              {
-                "passage_id": "docu-k-63-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.493186,
-                "query_term_coverage": 0.0
               },
               {
                 "passage_id": "docu-k-49-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.488139,
+                "score": 0.548143,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-k-50-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.471093,
+                "score": 0.517666,
                 "query_term_coverage": 0.75
+              },
+              {
+                "passage_id": "docu-k-55-0",
+                "accession": "0001261333-26-000021",
+                "score": 0.498213,
+                "query_term_coverage": 0.0
               }
             ],
             "method": "semantic",
@@ -4859,33 +4859,33 @@
             "answer": [],
             "retrieved": [
               {
-                "passage_id": "docu-k-70-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.658303,
-                "query_term_coverage": 0.5
-              },
-              {
-                "passage_id": "docu-k-74-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.600864,
-                "query_term_coverage": 0.25
-              },
-              {
                 "passage_id": "docu-k-181-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.584723,
+                "score": 0.715283,
                 "query_term_coverage": 0.25
               },
               {
                 "passage_id": "docu-k-101-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.577124,
+                "score": 0.677773,
                 "query_term_coverage": 0.25
               },
               {
                 "passage_id": "docu-k-182-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.538018,
+                "score": 0.654189,
+                "query_term_coverage": 0.25
+              },
+              {
+                "passage_id": "docu-k-70-0",
+                "accession": "0001261333-26-000021",
+                "score": 0.61586,
+                "query_term_coverage": 0.5
+              },
+              {
+                "passage_id": "docu-k-184-0",
+                "accession": "0001261333-26-000021",
+                "score": 0.544079,
                 "query_term_coverage": 0.25
               }
             ],
@@ -4902,39 +4902,39 @@
           "result": {
             "question": "How much revenue did customers on Mars generate?",
             "status": "abstained",
-            "reason": "question_details_not_supported",
+            "reason": "insufficient_topic_support",
             "source_notice": "Real SEC filings. Narrative excerpts only: Business, MD&A and Risk Factors. Financial tables are excluded. Evidence is extractive and requires review.",
             "answer": [],
             "retrieved": [
               {
-                "passage_id": "docu-k-3-0",
+                "passage_id": "docu-k-49-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.669311,
-                "query_term_coverage": 0.75
+                "score": 0.678717,
+                "query_term_coverage": 0.5
               },
               {
-                "passage_id": "docu-k-229-0",
+                "passage_id": "docu-k-3-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.655702,
-                "query_term_coverage": 0.25
+                "score": 0.672184,
+                "query_term_coverage": 0.75
               },
               {
                 "passage_id": "docu-k-404-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.654744,
+                "score": 0.662045,
                 "query_term_coverage": 0.75
               },
               {
                 "passage_id": "docu-k-405-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.650894,
+                "score": 0.659687,
                 "query_term_coverage": 0.75
               },
               {
-                "passage_id": "docu-k-259-0",
+                "passage_id": "docu-k-229-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.649779,
-                "query_term_coverage": 0.5
+                "score": 0.651518,
+                "query_term_coverage": 0.25
               }
             ],
             "method": "semantic",
@@ -4950,38 +4950,38 @@
           "result": {
             "question": "Why did an earthquake cause the reported revenue increase?",
             "status": "abstained",
-            "reason": "insufficient_topic_support",
+            "reason": "question_details_not_supported",
             "source_notice": "Real SEC filings. Narrative excerpts only: Business, MD&A and Risk Factors. Financial tables are excluded. Evidence is extractive and requires review.",
             "answer": [],
             "retrieved": [
               {
-                "passage_id": "docu-q-240-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.675215,
-                "query_term_coverage": 0.333
-              },
-              {
-                "passage_id": "docu-q-219-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.662886,
-                "query_term_coverage": 0.333
-              },
-              {
                 "passage_id": "docu-q-22-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.662584,
+                "score": 0.636368,
                 "query_term_coverage": 0.667
               },
               {
                 "passage_id": "docu-q-91-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.543808,
+                "score": 0.634478,
+                "query_term_coverage": 0.333
+              },
+              {
+                "passage_id": "docu-q-219-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.609771,
+                "query_term_coverage": 0.333
+              },
+              {
+                "passage_id": "docu-q-240-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.606226,
                 "query_term_coverage": 0.333
               },
               {
                 "passage_id": "docu-q-31-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.535266,
+                "score": 0.599608,
                 "query_term_coverage": 0.667
               }
             ],
@@ -5005,31 +5005,31 @@
               {
                 "passage_id": "docu-q-278-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.817617,
+                "score": 0.808366,
+                "query_term_coverage": 0.333
+              },
+              {
+                "passage_id": "docu-q-274-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.77882,
                 "query_term_coverage": 0.333
               },
               {
                 "passage_id": "docu-q-279-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.79435,
+                "score": 0.77422,
                 "query_term_coverage": 0.5
-              },
-              {
-                "passage_id": "docu-q-274-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.755663,
-                "query_term_coverage": 0.333
               },
               {
                 "passage_id": "docu-q-50-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.752294,
+                "score": 0.728757,
                 "query_term_coverage": 0.667
               },
               {
                 "passage_id": "docu-q-281-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.728068,
+                "score": 0.672539,
                 "query_term_coverage": 0.5
               }
             ],
@@ -5046,38 +5046,38 @@
           "result": {
             "question": "Was cash provided by operating activities exactly $999 million?",
             "status": "abstained",
-            "reason": "insufficient_topic_support",
+            "reason": "requested_number_not_supported",
             "source_notice": "Real SEC filings. Narrative excerpts only: Business, MD&A and Risk Factors. Financial tables are excluded. Evidence is extractive and requires review.",
             "answer": [],
             "retrieved": [
               {
-                "passage_id": "docu-q-8-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.722125,
-                "query_term_coverage": 0.5
-              },
-              {
                 "passage_id": "docu-q-58-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.684641,
+                "score": 0.728254,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-q-59-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.684641,
+                "score": 0.728254,
                 "query_term_coverage": 1.0
+              },
+              {
+                "passage_id": "docu-q-8-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.718114,
+                "query_term_coverage": 0.5
               },
               {
                 "passage_id": "docu-q-60-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.653316,
+                "score": 0.703817,
                 "query_term_coverage": 0.75
               },
               {
                 "passage_id": "docu-q-72-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.63015,
+                "score": 0.654149,
                 "query_term_coverage": 0.75
               }
             ],
@@ -5150,33 +5150,33 @@
             "answer": [],
             "retrieved": [
               {
+                "passage_id": "ain-q-4-0",
+                "accession": "0001628280-26-052329",
+                "score": 0.405485,
+                "query_term_coverage": 0.25
+              },
+              {
                 "passage_id": "ain-q-26-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.371355,
+                "score": 0.364786,
                 "query_term_coverage": 0.25
               },
               {
                 "passage_id": "ain-q-52-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.349985,
+                "score": 0.352981,
                 "query_term_coverage": 0.25
               },
               {
-                "passage_id": "ain-q-49-0",
+                "passage_id": "ain-q-27-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.341284,
-                "query_term_coverage": 0.25
+                "score": 0.348618,
+                "query_term_coverage": 0.0
               },
               {
-                "passage_id": "ain-q-53-0",
+                "passage_id": "ain-q-41-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.334624,
-                "query_term_coverage": 0.25
-              },
-              {
-                "passage_id": "ain-q-37-0",
-                "accession": "0001628280-26-052329",
-                "score": 0.333378,
+                "score": 0.347539,
                 "query_term_coverage": 0.25
               }
             ],
@@ -5209,10 +5209,10 @@
         "answerable": 20,
         "unsupported": 10,
         "retrieval_complete": 19,
-        "gold_answer_complete": 15,
+        "gold_answer_complete": 16,
         "unsupported_abstained": 10,
         "false_abstentions": 2,
-        "incorrect_answers": 3,
+        "incorrect_answers": 2,
         "answered": 18,
         "exact_excerpts": 19,
         "excerpts": 19,
@@ -5225,7 +5225,7 @@
           "id": "r01",
           "question": "How many employees did Docusign have?",
           "answerable": true,
-          "outcome": "answer_not_gold_complete",
+          "outcome": "gold_complete",
           "gold": [
             "docu-k-68-0"
           ],
@@ -5236,9 +5236,9 @@
             "source_notice": "Real SEC filings. Narrative excerpts only: Business, MD&A and Risk Factors. Financial tables are excluded. Evidence is extractive and requires review.",
             "answer": [
               {
-                "excerpt": "employees have volunteered more than 140,000 hours collectively, including at organizations promoting healthier forests, echoing our company-wide commitment to environmental programs. Additionally, we match funds given by our employees to qualifying nonprofits. To date, we have mobilized $25 million in employee donations and company match, supporting approximately 10,700 organizations.",
+                "excerpt": "We are a global organization with an increasingly international footprint. As we continue to grow in new markets, we anticipate continuing to recruit in new geographies. As of January 31, 2026, we had 7,044 employees, of which approximately 60% were based in the U.S. and the remainder in international locations. None of our U.S. employees are represented by a labor union with respect to their employment with us. Employees in some other countries are represented by workers' councils or participate in collective bargaining arrangements at the national and/or industry level. We have not experienced any work stoppages. We consider our relations with our employees to be positive, and we measure employee satisfaction through bi-annual engagement surveys.",
                 "citation": {
-                  "passage_id": "docu-k-74-0",
+                  "passage_id": "docu-k-68-0",
                   "company": "Docusign, Inc.",
                   "ticker": "DOCU",
                   "cik": "0001261333",
@@ -5251,8 +5251,8 @@
                   "source_url": "https://www.sec.gov/Archives/edgar/data/1261333/000126133326000021/docu-20260131.htm",
                   "local_path": "data/raw/docu-k.html",
                   "sha256": "9b53b918797babeddaa816fa14d47698cdf2b25863ee3e1feab5a2da2612572b",
-                  "start_char": 37128,
-                  "end_char": 37516,
+                  "start_char": 33622,
+                  "end_char": 34380,
                   "anchor": "ica66f868aaba4368a06df1fa9500dcaa_25"
                 }
               }
@@ -5261,7 +5261,7 @@
               {
                 "passage_id": "docu-k-37-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.032266,
+                "score": 0.032522,
                 "query_term_coverage": 1.0
               },
               {
@@ -5279,13 +5279,13 @@
               {
                 "passage_id": "docu-k-70-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.031514,
+                "score": 0.031258,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-k-69-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.030777,
+                "score": 0.03125,
                 "query_term_coverage": 1.0
               }
             ],
@@ -5333,7 +5333,7 @@
               {
                 "passage_id": "docu-k-37-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.032266,
+                "score": 0.032522,
                 "query_term_coverage": 1.0
               },
               {
@@ -5351,13 +5351,13 @@
               {
                 "passage_id": "docu-k-70-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.031514,
+                "score": 0.031258,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-k-69-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.030777,
+                "score": 0.03125,
                 "query_term_coverage": 1.0
               }
             ],
@@ -5411,25 +5411,25 @@
               {
                 "passage_id": "docu-k-76-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.031099,
+                "score": 0.031319,
                 "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-k-56-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.031025,
-                "query_term_coverage": 0.5
               },
               {
                 "passage_id": "docu-k-39-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.030769,
+                "score": 0.031258,
                 "query_term_coverage": 0.25
               },
               {
                 "passage_id": "docu-k-11-0",
                 "accession": "0001261333-26-000021",
                 "score": 0.030679,
+                "query_term_coverage": 0.25
+              },
+              {
+                "passage_id": "docu-k-29-0",
+                "accession": "0001261333-26-000021",
+                "score": 0.029877,
                 "query_term_coverage": 0.25
               }
             ],
@@ -5487,9 +5487,15 @@
                 "query_term_coverage": 1.0
               },
               {
+                "passage_id": "docu-k-45-0",
+                "accession": "0001261333-26-000021",
+                "score": 0.031498,
+                "query_term_coverage": 0.5
+              },
+              {
                 "passage_id": "docu-k-44-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.031746,
+                "score": 0.031258,
                 "query_term_coverage": 0.75
               },
               {
@@ -5497,12 +5503,6 @@
                 "accession": "0001261333-26-000021",
                 "score": 0.031099,
                 "query_term_coverage": 0.25
-              },
-              {
-                "passage_id": "docu-k-45-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.030777,
-                "query_term_coverage": 0.5
               }
             ],
             "method": "hybrid",
@@ -5553,27 +5553,27 @@
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "docu-q-39-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.031258,
-                "query_term_coverage": 0.667
-              },
-              {
                 "passage_id": "docu-q-42-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.03125,
+                "score": 0.031754,
                 "query_term_coverage": 0.667
               },
               {
                 "passage_id": "docu-q-44-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.031025,
+                "score": 0.031258,
+                "query_term_coverage": 0.667
+              },
+              {
+                "passage_id": "docu-q-39-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.03101,
                 "query_term_coverage": 0.667
               },
               {
                 "passage_id": "docu-q-40-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.030835,
+                "score": 0.030579,
                 "query_term_coverage": 0.667
               }
             ],
@@ -5637,15 +5637,15 @@
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "docu-q-44-0",
+                "passage_id": "docu-q-42-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.03055,
+                "score": 0.030769,
                 "query_term_coverage": 0.5
               },
               {
-                "passage_id": "docu-q-42-0",
+                "passage_id": "docu-q-44-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.030536,
+                "score": 0.03055,
                 "query_term_coverage": 0.5
               }
             ],
@@ -5691,33 +5691,33 @@
             ],
             "retrieved": [
               {
-                "passage_id": "docu-q-73-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.032266,
-                "query_term_coverage": 1.0
-              },
-              {
                 "passage_id": "docu-q-22-0",
                 "accession": "0001261333-26-000099",
                 "score": 0.032002,
                 "query_term_coverage": 0.333
               },
               {
+                "passage_id": "docu-q-73-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.031778,
+                "query_term_coverage": 1.0
+              },
+              {
                 "passage_id": "docu-q-14-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.031514,
+                "score": 0.031281,
                 "query_term_coverage": 0.667
+              },
+              {
+                "passage_id": "docu-q-3-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.031025,
+                "query_term_coverage": 0.333
               },
               {
                 "passage_id": "i90cfb5dfe62e40ebacce526d1fba41bb_85",
                 "accession": "0001261333-26-000099",
                 "score": 0.030886,
-                "query_term_coverage": 0.333
-              },
-              {
-                "passage_id": "docu-q-29-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.03055,
                 "query_term_coverage": 0.333
               }
             ],
@@ -5769,28 +5769,28 @@
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "docu-q-14-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.031746,
-                "query_term_coverage": 0.5
-              },
-              {
                 "passage_id": "docu-q-10-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.03101,
+                "score": 0.031514,
                 "query_term_coverage": 0.25
               },
               {
-                "passage_id": "docu-q-13-0",
+                "passage_id": "docu-q-14-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.030835,
-                "query_term_coverage": 0.25
+                "score": 0.030798,
+                "query_term_coverage": 0.5
               },
               {
                 "passage_id": "docu-q-16-0",
                 "accession": "0001261333-26-000099",
                 "score": 0.030622,
                 "query_term_coverage": 0.5
+              },
+              {
+                "passage_id": "docu-q-13-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.030579,
+                "query_term_coverage": 0.25
               }
             ],
             "method": "hybrid",
@@ -5891,25 +5891,25 @@
               {
                 "passage_id": "ain-k-4-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.032258,
+                "score": 0.032002,
                 "query_term_coverage": 0.6
+              },
+              {
+                "passage_id": "ain-k-15-0",
+                "accession": "0001628280-26-012906",
+                "score": 0.030777,
+                "query_term_coverage": 0.4
               },
               {
                 "passage_id": "ain-k-2-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.03101,
+                "score": 0.030777,
                 "query_term_coverage": 0.4
-              },
-              {
-                "passage_id": "ain-k-8-0",
-                "accession": "0001628280-26-012906",
-                "score": 0.030536,
-                "query_term_coverage": 0.6
               },
               {
                 "passage_id": "ain-k-55-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.030366,
+                "score": 0.030622,
                 "query_term_coverage": 0.4
               }
             ],
@@ -5961,28 +5961,28 @@
                 "query_term_coverage": 1.0
               },
               {
+                "passage_id": "ain-k-26-0",
+                "accession": "0001628280-26-012906",
+                "score": 0.031514,
+                "query_term_coverage": 0.6
+              },
+              {
                 "passage_id": "ain-k-5-0",
                 "accession": "0001628280-26-012906",
                 "score": 0.031281,
                 "query_term_coverage": 0.6
               },
               {
-                "passage_id": "ain-k-26-0",
-                "accession": "0001628280-26-012906",
-                "score": 0.031054,
-                "query_term_coverage": 0.6
-              },
-              {
                 "passage_id": "ib1b89345a4364fb69d7ce3189f67b705_16-part0",
                 "accession": "0001628280-26-012906",
-                "score": 0.03101,
+                "score": 0.030777,
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "ain-k-4-0",
+                "passage_id": "ain-k-25-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.029958,
-                "query_term_coverage": 0.4
+                "score": 0.030366,
+                "query_term_coverage": 0.6
               }
             ],
             "method": "hybrid",
@@ -6000,38 +6000,38 @@
           "result": {
             "question": "What share of worldwide monofilament requirements does the Homer facility supply?",
             "status": "abstained",
-            "reason": "question_details_not_supported",
+            "reason": "insufficient_topic_support",
             "source_notice": "Real SEC filings. Narrative excerpts only: Business, MD&A and Risk Factors. Financial tables are excluded. Evidence is extractive and requires review.",
             "answer": [],
             "retrieved": [
               {
+                "passage_id": "ain-k-10-0",
+                "accession": "0001628280-26-012906",
+                "score": 0.032522,
+                "query_term_coverage": 0.333
+              },
+              {
                 "passage_id": "ain-k-24-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.032787,
+                "score": 0.032522,
                 "query_term_coverage": 0.833
               },
               {
                 "passage_id": "ain-k-9-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.032002,
+                "score": 0.031498,
                 "query_term_coverage": 0.167
               },
               {
-                "passage_id": "ain-k-10-0",
+                "passage_id": "ain-k-66-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.031281,
-                "query_term_coverage": 0.333
-              },
-              {
-                "passage_id": "ain-k-16-0",
-                "accession": "0001628280-26-012906",
-                "score": 0.031258,
+                "score": 0.03031,
                 "query_term_coverage": 0.167
               },
               {
                 "passage_id": "ain-k-25-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.030777,
+                "score": 0.030077,
                 "query_term_coverage": 0.167
               }
             ],
@@ -6113,7 +6113,7 @@
               {
                 "passage_id": "ain-k-296-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.031545,
+                "score": 0.031778,
                 "query_term_coverage": 1.0
               },
               {
@@ -6123,9 +6123,9 @@
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "ain-k-242-0",
+                "passage_id": "ain-k-298-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.03125,
+                "score": 0.030798,
                 "query_term_coverage": 0.5
               }
             ],
@@ -6152,7 +6152,7 @@
               {
                 "passage_id": "ain-k-297-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.031746,
+                "score": 0.032266,
                 "query_term_coverage": 1.0
               },
               {
@@ -6162,9 +6162,9 @@
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "ain-k-291-0",
+                "passage_id": "ain-k-293-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.031514,
+                "score": 0.031754,
                 "query_term_coverage": 0.5
               },
               {
@@ -6174,9 +6174,9 @@
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "ain-k-293-0",
+                "passage_id": "ain-k-291-0",
                 "accession": "0001628280-26-012906",
-                "score": 0.03125,
+                "score": 0.031258,
                 "query_term_coverage": 0.5
               }
             ],
@@ -6380,19 +6380,19 @@
               {
                 "passage_id": "docu-q-33-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.030579,
+                "score": 0.031025,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-q-38-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.029877,
+                "score": 0.03031,
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "docu-q-39-0",
+                "passage_id": "docu-q-44-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.029514,
+                "score": 0.029631,
                 "query_term_coverage": 0.5
               }
             ],
@@ -6440,20 +6440,20 @@
               {
                 "passage_id": "docu-q-16-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.032787,
+                "score": 0.032522,
                 "query_term_coverage": 1.0
+              },
+              {
+                "passage_id": "docu-q-34-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.032018,
+                "query_term_coverage": 0.75
               },
               {
                 "passage_id": "docu-q-33-0",
                 "accession": "0001261333-26-000099",
                 "score": 0.032002,
                 "query_term_coverage": 1.0
-              },
-              {
-                "passage_id": "docu-q-34-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.031754,
-                "query_term_coverage": 0.75
               },
               {
                 "passage_id": "docu-q-31-0",
@@ -6522,21 +6522,21 @@
                 "query_term_coverage": 1.0
               },
               {
-                "passage_id": "docu-k-48-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.030777,
-                "query_term_coverage": 1.0
-              },
-              {
                 "passage_id": "docu-k-6-0",
                 "accession": "0001261333-26-000021",
                 "score": 0.030579,
                 "query_term_coverage": 1.0
               },
               {
+                "passage_id": "docu-k-48-0",
+                "accession": "0001261333-26-000021",
+                "score": 0.030536,
+                "query_term_coverage": 1.0
+              },
+              {
                 "passage_id": "docu-k-3-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.03009,
+                "score": 0.030331,
                 "query_term_coverage": 0.5
               }
             ],
@@ -6590,25 +6590,25 @@
               {
                 "passage_id": "docu-k-49-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.032018,
+                "score": 0.032266,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-k-50-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.031258,
+                "score": 0.031498,
                 "query_term_coverage": 0.75
+              },
+              {
+                "passage_id": "docu-k-76-0",
+                "accession": "0001261333-26-000021",
+                "score": 0.03055,
+                "query_term_coverage": 0.5
               },
               {
                 "passage_id": "docu-k-47-0",
                 "accession": "0001261333-26-000021",
                 "score": 0.029462,
-                "query_term_coverage": 0.25
-              },
-              {
-                "passage_id": "docu-k-1-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.028439,
                 "query_term_coverage": 0.25
               }
             ],
@@ -6632,32 +6632,32 @@
               {
                 "passage_id": "docu-k-70-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.032266,
-                "query_term_coverage": 0.5
-              },
-              {
-                "passage_id": "docu-k-73-0",
-                "accession": "0001261333-26-000021",
-                "score": 0.031054,
+                "score": 0.031498,
                 "query_term_coverage": 0.5
               },
               {
                 "passage_id": "docu-k-460-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.030092,
+                "score": 0.030886,
                 "query_term_coverage": 0.75
               },
               {
-                "passage_id": "docu-k-474-0",
+                "passage_id": "docu-k-181-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.029911,
-                "query_term_coverage": 0.5
+                "score": 0.030282,
+                "query_term_coverage": 0.25
               },
               {
-                "passage_id": "docu-k-443-0",
+                "passage_id": "docu-k-101-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.029857,
+                "score": 0.029828,
                 "query_term_coverage": 0.25
+              },
+              {
+                "passage_id": "docu-k-73-0",
+                "accession": "0001261333-26-000021",
+                "score": 0.029287,
+                "query_term_coverage": 0.5
               }
             ],
             "method": "hybrid",
@@ -6680,7 +6680,7 @@
               {
                 "passage_id": "docu-k-3-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.032522,
+                "score": 0.032258,
                 "query_term_coverage": 0.75
               },
               {
@@ -6702,10 +6702,10 @@
                 "query_term_coverage": 0.75
               },
               {
-                "passage_id": "docu-k-259-0",
+                "passage_id": "docu-k-50-0",
                 "accession": "0001261333-26-000021",
-                "score": 0.028718,
-                "query_term_coverage": 0.5
+                "score": 0.027526,
+                "query_term_coverage": 0.75
               }
             ],
             "method": "hybrid",
@@ -6728,7 +6728,7 @@
               {
                 "passage_id": "docu-q-22-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.032266,
+                "score": 0.032787,
                 "query_term_coverage": 0.667
               },
               {
@@ -6738,16 +6738,16 @@
                 "query_term_coverage": 0.667
               },
               {
-                "passage_id": "docu-q-249-0",
+                "passage_id": "docu-q-33-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.029631,
+                "score": 0.029958,
                 "query_term_coverage": 0.667
               },
               {
-                "passage_id": "docu-q-219-0",
+                "passage_id": "docu-q-135-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.028475,
-                "query_term_coverage": 0.333
+                "score": 0.029274,
+                "query_term_coverage": 0.667
               },
               {
                 "passage_id": "docu-q-197-0",
@@ -6780,21 +6780,21 @@
                 "query_term_coverage": 0.333
               },
               {
-                "passage_id": "docu-q-279-0",
-                "accession": "0001261333-26-000099",
-                "score": 0.032258,
-                "query_term_coverage": 0.5
-              },
-              {
                 "passage_id": "docu-q-50-0",
                 "accession": "0001261333-26-000099",
                 "score": 0.032018,
                 "query_term_coverage": 0.667
               },
               {
+                "passage_id": "docu-q-279-0",
+                "accession": "0001261333-26-000099",
+                "score": 0.032002,
+                "query_term_coverage": 0.5
+              },
+              {
                 "passage_id": "docu-q-274-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.031498,
+                "score": 0.031754,
                 "query_term_coverage": 0.333
               },
               {
@@ -6824,13 +6824,13 @@
               {
                 "passage_id": "docu-q-58-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.032522,
+                "score": 0.032787,
                 "query_term_coverage": 1.0
               },
               {
                 "passage_id": "docu-q-59-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.032002,
+                "score": 0.032258,
                 "query_term_coverage": 1.0
               },
               {
@@ -6842,13 +6842,13 @@
               {
                 "passage_id": "docu-q-8-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.031319,
+                "score": 0.030798,
                 "query_term_coverage": 0.5
               },
               {
                 "passage_id": "docu-q-61-0",
                 "accession": "0001261333-26-000099",
-                "score": 0.030331,
+                "score": 0.030777,
                 "query_term_coverage": 0.75
               }
             ],
@@ -6923,31 +6923,31 @@
               {
                 "passage_id": "ain-q-26-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.032787,
+                "score": 0.032522,
                 "query_term_coverage": 0.25
               },
               {
                 "passage_id": "ain-q-66-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.031054,
-                "query_term_coverage": 0.25
-              },
-              {
-                "passage_id": "ain-q-53-0",
-                "accession": "0001628280-26-052329",
-                "score": 0.030777,
-                "query_term_coverage": 0.25
-              },
-              {
-                "passage_id": "ain-q-51-0",
-                "accession": "0001628280-26-052329",
-                "score": 0.030579,
+                "score": 0.030415,
                 "query_term_coverage": 0.25
               },
               {
                 "passage_id": "ain-q-52-0",
                 "accession": "0001628280-26-052329",
-                "score": 0.030415,
+                "score": 0.030159,
+                "query_term_coverage": 0.25
+              },
+              {
+                "passage_id": "ain-q-51-0",
+                "accession": "0001628280-26-052329",
+                "score": 0.029762,
+                "query_term_coverage": 0.25
+              },
+              {
+                "passage_id": "ain-q-49-0",
+                "accession": "0001628280-26-052329",
+                "score": 0.029236,
                 "query_term_coverage": 0.25
               }
             ],
