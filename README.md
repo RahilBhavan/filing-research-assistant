@@ -88,3 +88,7 @@ Optional future SEC ingestion still requires a valid `SEC_USER_AGENT` with conta
 - `evaluation/HUMAN-REVIEW.md`: independent citation-review process and worksheet instructions.
 
 The interface renders source content as text, applies a restrictive Content Security Policy, rejects nonlocal Host and cross-origin requests, and exposes no filesystem browsing or raw filing HTML route.
+
+## License
+
+MIT for the code. The SEC filing text under `corpora/` is public-record material from SEC EDGAR and is not covered by the MIT license.
