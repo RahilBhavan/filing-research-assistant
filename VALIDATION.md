@@ -1,5 +1,7 @@
 # Validation — September 21, 2026 (updated September 23, 2026)
 
+> Validation record for the v2 tool (Docusign and Albany, no LLM) as of September 23, 2026. Counts here describe that version. Since v3, the suite has 108 tests, and v3 benchmarks a pretrained bge-small embedding retriever; see [the v3 report](evaluation/treasury/REPORT.md).
+
 All commands below ran from the project directory unless stated otherwise. The real evaluation is separate from the preserved synthetic benchmark.
 
 | Check | Command / action | Exit | Result |
