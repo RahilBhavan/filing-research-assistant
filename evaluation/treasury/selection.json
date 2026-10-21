@@ -1,0 +1,7 @@
+{
+  "selected_retrieval_for_generation": "dense-hybrid",
+  "top_k": 5,
+  "basis": "dev split only (6 answerable): dense-hybrid recall@5 6/6, MRR 0.556; bm25 5/6, dense 5/6, lsa-hybrid 4/6, lsa 2/6. Chosen before any held-out retrieval or generation run.",
+  "generation_default_model": "claude-haiku-5-5",
+  "judge_model": "Claude Sonnet via the Claude Code CLI (a different model from the generator)"
+}

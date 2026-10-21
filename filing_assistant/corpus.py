@@ -14,6 +14,8 @@ IGNORE = {'script', 'style', 'head', 'nav', 'table', 'ix:hidden', 'xbrli:context
 def section_name(text):
     text = text.lower().replace('\u2019', "'").strip()
     text = re.sub(r'^item\s+\d+[a-z]?[. :–—-]*', '', text).strip()
+    # Some filer agents end headings with a period: "Item 1A. Risk Factors."
+    text = text.rstrip('.').strip()
     if text in {'risk factors', 'summary of risk factors'}:
         return 'risks'
     if re.match(r"^management(?:'?s)? discussion and analysis", text) and len(text) < 120:

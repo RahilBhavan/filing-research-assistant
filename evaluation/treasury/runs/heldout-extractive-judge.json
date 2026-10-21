@@ -1,0 +1,146 @@
+{
+ "t03": {
+  "verdict": "correct",
+  "reason": "The answer gives $6,095 for fiscal 2025 and $3,310 for fiscal 2024, matching the reference figures (reference is in thousands, which counts as equivalent).",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004589599999999999
+ },
+ "t04": {
+  "verdict": "correct",
+  "reason": "The answer states the ATM program permits sales of up to $20,000,000 of common stock, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004447
+ },
+ "t06": {
+  "verdict": "correct",
+  "reason": "The answer gives $45,743 for the quarter ended May 31, 2026 versus $0 a year earlier, matching the reference (units in thousands context).",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0044210000000000005
+ },
+ "t07": {
+  "verdict": "correct",
+  "reason": "The answer names Young Kim as CFO and COO under an employment agreement dated January 7, 2026, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0044504
+ },
+ "t08": {
+  "verdict": "incorrect",
+  "reason": "The answer only restates that revenue was $0 versus $1,075 prior year and does not give the reason: the machine lease agreements expired December 31, 2025 and were not renewed.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0045560999999999996
+ },
+ "t09": {
+  "verdict": "correct",
+  "reason": "The answer states 3,500,000 shares at $80.00 per share and net proceeds of $273.8 million, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0047799
+ },
+ "t11": {
+  "verdict": "correct",
+  "reason": "The answer states 717,131 bitcoins, $76,027 average price, and $54.5 billion aggregate, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004686900000000001
+ },
+ "t12": {
+  "verdict": "incorrect",
+  "reason": "The answer only says bitcoin is held with unnamed U.S.-based custodians and does not name Anchorage Digital Bank, Coinbase Custody Trust Company, or Fidelity Digital Assets as asked.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0046938
+ },
+ "t13": {
+  "verdict": "incorrect",
+  "reason": "The answer gives the $2.25 billion balance but omits what the reserve is meant to fund (preferred stock dividends and interest on outstanding debt), which the question explicitly asks for.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004434400000000001
+ },
+ "t15": {
+  "verdict": "correct",
+  "reason": "The answer states full support for on-premises licenses ends December 31, 2026, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0043809
+ },
+ "t16": {
+  "verdict": "correct",
+  "reason": "The answer states approximately 843,775 bitcoins with an aggregate market value of $54.14 billion as of July 24, 2026, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004775
+ },
+ "t17": {
+  "verdict": "incorrect",
+  "reason": "The answer only gives the definition of BTC Yield and does not state the reported figure of 5.0% for Q2 2026 (or 8.1% for six months).",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0047083
+ },
+ "t19": {
+  "verdict": "correct",
+  "reason": "The answer states total revenues of $122.4 million for the three months ended June 30, 2026, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0043258
+ },
+ "t20": {
+  "verdict": "correct",
+  "reason": "The answer states the new MSTR Stock offering announced March 23, 2026 was $21.0 billion, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0043434
+ },
+ "t21": {
+  "verdict": "incorrect",
+  "reason": "The answer only references where MD&A for a prior year can be found and never states the headcount of 4,951 employees at December 31, 2025.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0049165
+ },
+ "t22": {
+  "verdict": "correct",
+  "reason": "The answer states four exchanges and names all four exactly as in the reference: Coinbase Exchange, Coinbase International Exchange, Coinbase Derivatives Exchange, and Deribit Exchange.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004765
+ },
+ "t23": {
+  "verdict": "incorrect",
+  "reason": "The answer gives a staked-value figure ($7.5 billion) and never lists the eight assets (ADA, AVAX, ATOM, DOT, ETH, POL, SOL, XTZ) the question asks for.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0047806
+ },
+ "t24": {
+  "verdict": "correct",
+  "reason": "The answer states the cap of no more than 2% of assets under custody in hot wallets, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0041449
+ },
+ "t25": {
+  "verdict": "correct",
+  "reason": "The answer states incorporation in May 2012 as a Delaware corporation, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.003884
+ },
+ "t26": {
+  "verdict": "incorrect",
+  "reason": "The answer gives the correct figures ($245.9B vs $425.0B) but omits the driver of the decline (lower crypto asset prices), which the question explicitly asks for.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0045625
+ },
+ "t27": {
+  "verdict": "correct",
+  "reason": "The answer gives 7.6 million MTUs for the three months ended June 30, 2026, matching the reference; the 7.9 million figure is for the six-month period and doesn't contradict it.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0044930000000000005
+ },
+ "t28": {
+  "verdict": "incorrect",
+  "reason": "The answer only quotes a sentence about employee-related expenses being tempered by the Restructuring and never states the $52.4 million restructuring expense figure.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004619000000000001
+ },
+ "t29": {
+  "verdict": "correct",
+  "reason": "The answer states approximately $2.0 billion remained available at June 30, 2026, matching the reference; omitting the $4.0 billion authorization total is not required by the question.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0044456
+ },
+ "t30": {
+  "verdict": "correct",
+  "reason": "The answer states 85% for the three months and 84% for six months ended June 30, 2026, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0041528
+ }
+}

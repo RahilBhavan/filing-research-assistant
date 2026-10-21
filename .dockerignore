@@ -1,0 +1,11 @@
+.git
+.venv
+**/__pycache__
+dist
+build
+*.egg-info
+corpora/sec
+data
+baselines
+work
+evaluation
