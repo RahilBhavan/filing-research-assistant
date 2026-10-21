@@ -58,10 +58,10 @@ def fetch_corpus(destination, ciks, as_of, user_agent=None):
     destination = Path(destination).resolve()
     if destination.exists():
         raise ValueError('Destination exists; choose a new folder to preserve the fixture corpus')
-    if len(ciks)!=2 or len(set(ciks))!=2 or any(not re.fullmatch(r'\d{1,10}', c) for c in ciks):
-        raise ValueError('Supply exactly two different numeric CIKs')
-    if len({str(int(c)) for c in ciks}) != 2:
-        raise ValueError('CIKs must identify two distinct companies')
+    if not 1<=len(ciks)<=5 or any(not re.fullmatch(r'\d{1,10}', c) for c in ciks):
+        raise ValueError('Supply one to five numeric CIKs')
+    if len({str(int(c)) for c in ciks}) != len(ciks):
+        raise ValueError('CIKs must identify distinct companies')
     client = SecClient(user_agent or os.environ.get('SEC_USER_AGENT',''))
     destination.parent.mkdir(parents=True,exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='.sec-download-',dir=destination.parent) as temp:

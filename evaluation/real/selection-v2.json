@@ -7,13 +7,14 @@
     "filing_assistant/research.py": "6e5b3e24bda8ab230211de6ada91b34120eec46823632fbf16fecbf9e006b918",
     "filing_assistant/retrieval.py": "a05dcc95395a42e868a9b3e15a7767b67ecbe72d74d5b3584fe76574b4e130d7",
     "filing_assistant/engine.py": "f65d19092b6f02e6d690d14b2b6dc2b4deb193f07b3c0a2c1c4f071aba79b192",
-    "filing_assistant/corpus.py": "b029f0e56f9ed2a8039797ee6eeb7102d2e193b9e022ff9e25a2a255552bf0a3",
+    "filing_assistant/corpus.py": "a73779af9c0afa8541cc8d67389cdc1a359973a573699e2ecabbb6d05887ffc6",
     "filing_assistant/real_eval.py": "da59a110ed385a73e81697bc944684745fad458d46c1be1ac7c46ebf54bf4ef6",
     "baselines/v1_engine.py": "5f3e2006d5407caa29711c8b712515a06067455e19ea4349e3016592886ede5a",
     "corpora/sec/data/semantic.json.gz": "686c6c02856a88941b54cf9a1f32d2f831871b2f1e530cba56c110426b6678c5"
   },
   "rehash_notes": [
     "2026-09-23: research.py rehashed after count, realized-change, total-amount and two-term gates were added for out-of-set basic questions. heldout-v2 counts were rerun and unchanged; this is not a new selection.",
-    "2026-09-23: real_eval.py rehashed after adding --write and the archival v1 notice. No scoring logic changed."
+    "2026-09-23: real_eval.py rehashed after adding --write and the archival v1 notice. No scoring logic changed.",
+    "2026-10-21: corpus.py rehashed after section headings ending in a period (\"Item 1A. Risk Factors.\") were recognized for the treasury corpus. The real SEC index rebuilds byte-identically (test_sources_and_frozen_index_match_rebuild) and heldout-v2 counts were rerun and unchanged; this is not a new selection."
   ]
 }
