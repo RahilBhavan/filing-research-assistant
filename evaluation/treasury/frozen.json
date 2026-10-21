@@ -1,0 +1,13 @@
+{
+  "frozen_at": "2026-10-21T21:43:58.627655+00:00",
+  "label_origin": "Author-written by the Claude Code agent from source passages before any generator run; not independently human verified.",
+  "human_independent": false,
+  "rule": "Held-out questions are scored once per configuration; nothing is tuned on them. dev.jsonl is for building.",
+  "gold_semantics": "Gold passages are alternatives: retrieval counts a hit when any gold passage is in the top k.",
+  "files": {
+    "evaluation/treasury/heldout.jsonl": "ebb6ea30b364577f4c7d4d341b2e651e04412f5337f89b1b4b2d76997bcad574",
+    "evaluation/treasury/dev.jsonl": "bcee31aca6225ada99d442e298b832e571d1d64e0f7957c358283c02d923cc39",
+    "corpora/treasury/data/manifest.json": "81ec5121a126232c9ff1588092618fabe95eeb4bc8c5065805338a33ef028c5f",
+    "corpora/treasury/data/index.json": "013beb53477bfb01c91f82ebcf73d76d46be1cf5d75b9bc063240c3bc1d842e0"
+  }
+}
