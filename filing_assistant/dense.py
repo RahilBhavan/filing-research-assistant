@@ -7,6 +7,7 @@ only for this method; BM25 and LSA stay standard-library only.
 import hashlib
 import json
 import math
+import os
 from array import array
 from pathlib import Path
 
@@ -24,7 +25,7 @@ class FastEmbedEncoder:
     def __init__(self, model=MODEL, cache_dir=None):
         from fastembed import TextEmbedding
         self.model = model
-        self.engine = TextEmbedding(model_name=model, cache_dir=cache_dir)
+        self.engine = TextEmbedding(model_name=model, cache_dir=cache_dir or os.environ.get('FASTEMBED_CACHE_PATH'))
 
     def encode(self, texts):
         return [[float(v) for v in vector] for vector in self.engine.embed(list(texts), batch_size=64)]

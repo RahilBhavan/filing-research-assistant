@@ -1,0 +1,50 @@
+{
+ "t01": {
+  "verdict": "correct",
+  "reason": "The answer states three employees (CEO, CFO, President) and four dedicated contractors, matching the reference exactly.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0050991
+ },
+ "t17": {
+  "verdict": "incorrect",
+  "reason": "The answer says 15% but the reference gives a Q2 2026 BTC Yield of 5.0%, so the figure is wrong.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0042089
+ },
+ "t19": {
+  "verdict": "correct",
+  "reason": "The answer states $122.4 million for the three months ended June 30, 2026, matching the reference; the $246.7 million is the six-month figure and is clearly the extra detail, though phrased ambiguously.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.005523599999999999
+ },
+ "t22": {
+  "verdict": "correct",
+  "reason": "The answer states four exchanges and names all four (Coinbase Exchange, Coinbase International Exchange, Coinbase Derivatives Exchange, Deribit Exchange), matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0072564
+ },
+ "t25": {
+  "verdict": "correct",
+  "reason": "The answer states incorporation in May 2012 as a Delaware corporation, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0021363
+ },
+ "t26": {
+  "verdict": "correct",
+  "reason": "The answer gives $245.9 billion vs $425.0 billion and attributes the decline primarily to lower crypto asset prices, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0071535
+ },
+ "t29": {
+  "verdict": "correct",
+  "reason": "The answer states approximately $2.0 billion remained available at June 30, 2026, matching the reference; omitting the $4.0 billion authorization total is not required by the question.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0044711
+ },
+ "t30": {
+  "verdict": "correct",
+  "reason": "The answer gives 85% for the June 2026 quarter, matching the reference and supported by the cited quote.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0050609
+ }
+}

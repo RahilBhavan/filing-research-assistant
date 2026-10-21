@@ -19,6 +19,7 @@ def main(argv=None):
     commands=parser.add_subparsers(dest='command',required=True)
     serve_parser=commands.add_parser('serve',help='Open the real SEC corpus in a localhost interface')
     serve_parser.add_argument('--port',type=int,default=8765)
+    serve_parser.add_argument('--host',default='127.0.0.1',help='Bind address; use 0.0.0.0 only inside a container')
     commands.add_parser('ingest',help='Validate hashes and rebuild narrative index from local HTML')
     commands.add_parser('list',help='Show corpus provenance and exact scope values')
     ask=commands.add_parser('ask',help='Return cited narrative extracts or abstain')
@@ -31,6 +32,14 @@ def main(argv=None):
     ask.add_argument('--compare',action='store_true',help='Require exactly two filings and evidence from each')
     ask.add_argument('--method',choices=['bm25','semantic','hybrid'],default='bm25')
     ask.add_argument('--json',action='store_true')
+    cited=commands.add_parser('answer',help='Checked, cited LLM answer over one filing (treasury corpus)')
+    cited.add_argument('question')
+    cited.add_argument('--company',required=True,help='Exact ticker')
+    cited.add_argument('--accession',action='append',default=[])
+    cited.add_argument('--method',choices=['bm25','lsa','lsa-hybrid','dense','dense-hybrid'],default='dense-hybrid')
+    cited.add_argument('--provider',choices=['anthropic','claude-cli','ollama','extractive'],help='Default: anthropic with ANTHROPIC_API_KEY, else extractive')
+    cited.add_argument('--model')
+    cited.add_argument('--json',action='store_true')
     commands.add_parser('evaluate',help='Run frozen bundled evaluation; --write rewrites reports').add_argument('--write',action='store_true',help='Rewrite evaluation/results.json and REPORT.md')
     fetch=commands.add_parser('fetch-sec',help='Optional network operation into a new corpus folder')
     fetch.add_argument('--cik',action='append',required=True)
@@ -44,7 +53,7 @@ def main(argv=None):
     try:
         if args.command=='serve':
             from .webapp import serve
-            serve(corpus,args.port)
+            serve(corpus,args.port,args.host)
         elif args.command=='fetch-sec':
             docs=fetch_corpus(args.destination,args.cik,args.as_of)
             print('Downloaded {} SEC filings to {}'.format(len(docs),args.destination))
@@ -86,11 +95,24 @@ def main(argv=None):
                         print('\n> '+item['excerpt'])
                         print('[{} | {} | report {} | filed {} | {} | {}]({})'.format(c['company'],c['form'],c['report_period'],c['filing_date'],c['section'],c['accession'],target))
                 print('\n'+result['support_assessment'])
+        elif args.command=='answer':
+            from .cited import Retrieval, answer
+            from .providers import make_provider
+            result=answer(args.question,dict(company=args.company,accessions=args.accession),Retrieval(build_index(args.corpus),args.corpus),make_provider(args.provider,args.model),args.method)
+            if args.json:
+                print(json.dumps(result,indent=2))
+            elif result['status']=='abstained':
+                print('No checked answer ({}). Retrieved: {}'.format(result['reason'],', '.join(result['retrieved'])))
+            else:
+                print(result['answer'])
+                for c in result['citations']:
+                    print('\n> {}\n[{} | {} | report {} | {} | {}]({})'.format(c['quote'],c['company'],c['form'],c['report_period'],c['accession'],c['passage_id'],c['source_url']))
+                print('\nProvider: {} · method: {}'.format(result['provider'],result['method']))
         elif args.command=='evaluate':
             report=evaluate(args.corpus,args.write)
             print(json.dumps({'dataset_size':report['dataset_size'],'metrics':report['metrics']},indent=2))
         return 0
-    except (ValueError,OSError,KeyError,TypeError) as error:
+    except (ValueError,OSError,KeyError,TypeError,RuntimeError) as error:
         print('Error: '+str(error),file=sys.stderr)
         return 2
 

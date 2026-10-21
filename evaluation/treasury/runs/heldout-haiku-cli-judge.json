@@ -1,0 +1,158 @@
+{
+ "t01": {
+  "verdict": "correct",
+  "reason": "The answer states three employees and four dedicated contractors as of fiscal year-end 2025, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0042494
+ },
+ "t03": {
+  "verdict": "correct",
+  "reason": "The answer gives $6,095 for fiscal 2025 and $3,310 for fiscal 2024, matching the reference figures (the filing's table is in thousands, so the units are equivalent).",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0046497000000000005
+ },
+ "t04": {
+  "verdict": "correct",
+  "reason": "The answer states the ATM program permits sales of up to $20,000,000 of common stock, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0043337
+ },
+ "t05": {
+  "verdict": "correct",
+  "reason": "The answer names Thomas J. Lee as Chairman appointed in June 2025, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0041438000000000004
+ },
+ "t06": {
+  "verdict": "correct",
+  "reason": "The answer states $45,743 for the quarter ended May 31, 2026, matching the reference (the table is in thousands, so the units are consistent); the missing prior-year comparison was not asked for.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0044876000000000004
+ },
+ "t07": {
+  "verdict": "correct",
+  "reason": "The answer names Young Kim as CFO (and COO) with an employment agreement dated January 7, 2026, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004418
+ },
+ "t08": {
+  "verdict": "correct",
+  "reason": "The answer states the lease agreements expired December 31, 2025 and were not renewed, matching the reference; the added KULR detail is consistent with the cited quote.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004294
+ },
+ "t09": {
+  "verdict": "correct",
+  "reason": "The answer gives 3,500,000 shares at $80.00 per share, matching the reference; the net proceeds figure was not asked for.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0046481
+ },
+ "t11": {
+  "verdict": "correct",
+  "reason": "The answer states 717,131 bitcoins at an average price of about $76,027 as of February 13, 2026, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0046045
+ },
+ "t12": {
+  "verdict": "correct",
+  "reason": "The answer names all three custodians in the reference: Anchorage Digital Bank, Coinbase Custody Trust Company, and Fidelity Digital Assets.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0047666
+ },
+ "t13": {
+  "verdict": "correct",
+  "reason": "The answer states the $2.25 billion USD Reserve balance as of February 2026 and that it supports preferred stock dividends and interest on outstanding debt, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004730700000000001
+ },
+ "t14": {
+  "verdict": "correct",
+  "reason": "The answer states 1,539 total employees and 1,091 international, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0041768
+ },
+ "t15": {
+  "verdict": "correct",
+  "reason": "The answer states full support ends December 31, 2026, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0038252
+ },
+ "t16": {
+  "verdict": "correct",
+  "reason": "The answer states approximately 843,775 bitcoins and a $54.14 billion market value as of July 24, 2026, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0045556
+ },
+ "t18": {
+  "verdict": "correct",
+  "reason": "The answer states $1.50 billion principal repurchased for $1.38 billion cash in the June 2026 quarter, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004601200000000001
+ },
+ "t19": {
+  "verdict": "correct",
+  "reason": "The answer states total revenues of $122.4 million for the three months ended June 30, 2026, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0040756
+ },
+ "t20": {
+  "verdict": "correct",
+  "reason": "The answer states the offering was $21.0 billion, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004043
+ },
+ "t22": {
+  "verdict": "correct",
+  "reason": "The answer states four exchanges and names all four exactly as in the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0044007
+ },
+ "t23": {
+  "verdict": "correct",
+  "reason": "The answer lists the same eight assets (ADA, AVAX, ATOM, DOT, ETH, POL, SOL, XTZ) as the reference as of December 31, 2025, though it omits the 'subject to jurisdiction' qualifier.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.005401099999999999
+ },
+ "t24": {
+  "verdict": "correct",
+  "reason": "The answer states the 2% of assets under custody cap for hot wallets, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0040433
+ },
+ "t25": {
+  "verdict": "correct",
+  "reason": "The answer states incorporation in May 2012 as a Delaware corporation, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.00402
+ },
+ "t26": {
+  "verdict": "correct",
+  "reason": "The answer gives $245.9 billion at June 30, 2026 and attributes the decline mainly to lower crypto asset prices, matching the reference; the added $196.5 billion decline and unit-growth offset come from the cited filing text.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0051647
+ },
+ "t27": {
+  "verdict": "correct",
+  "reason": "The answer states 7.6 million MTUs for the three months ended June 30, 2026, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0041614
+ },
+ "t28": {
+  "verdict": "correct",
+  "reason": "The answer states $52.4 million in restructuring expenses for the quarter ended June 30, 2026, matching the reference.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0041955
+ },
+ "t29": {
+  "verdict": "correct",
+  "reason": "The answer states approximately $2.0 billion remained available at June 30, 2026, matching the reference; omitting the $4.0 billion authorization is not required by the question.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.004382199999999999
+ },
+ "t30": {
+  "verdict": "correct",
+  "reason": "The answer states 85% for the three months ended June 30, 2026, matching the reference's quarterly figure.",
+  "judge": "claude-cli:sonnet",
+  "cost_usd": 0.0041527000000000005
+ }
+}

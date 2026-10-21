@@ -33,6 +33,15 @@ async function showSource(id){
     $('source-dialog').showModal();
   }catch(error){$('results').append(node('p',error.message,'abstention'));}
 }
+async function showCited(accessions){
+  const r=await api('/api/answer',{question:$('question').value,scope:{company:$('company').value,accessions}});
+  $('results').replaceChildren();
+  if(r.status==='abstained'){const box=node('div',undefined,'abstention');box.append(node('strong','No checked answer'),node('p',r.reason.startsWith('rejected:')?'A drafted answer was rejected because a quote or number did not match the source exactly.':'The retrieved passages do not state this.'),node('p','Retrieved: '+r.retrieved.join(', '),'hint'));$('results').append(box);return;}
+  $('results').append(node('h2','Answer, built only from the quotes below'),node('p',r.answer,'excerpt'));
+  const cards=node('div',undefined,'cards');
+  r.citations.forEach(c=>{const card=node('article',undefined,'card');card.append(node('h3',`${c.company} · ${c.form}`),node('p',`Report period ${c.report_period}\n${c.section.toUpperCase()} · ${c.accession}`,'meta'),node('p',c.quote,'excerpt'));const button=node('button','Inspect source ↗');button.type='button';button.addEventListener('click',()=>showSource(c.passage_id));card.append(button);cards.append(card);});
+  $('results').append(cards,node('p',`Each quote was checked verbatim against its passage before display. Writer: ${r.provider}; retrieval: ${r.method}.`,'hint'));
+}
 $('close-source').addEventListener('click',()=>$('source-dialog').close());
 $('compare').addEventListener('change',()=>{$('filing').disabled=$('compare').checked;$('comparison-note').textContent=$('compare').checked?'Both reporting periods will appear side by side. No change is calculated.':'Reporting dates and filing dates are shown separately.';});
 $('company').addEventListener('change',refreshFilings);
@@ -42,6 +51,7 @@ $('research').addEventListener('submit',async event=>{
   try{
     const compare=$('compare').checked;
     const accessions=compare?config.documents.filter(d=>d.ticker===$('company').value).map(d=>d.accession):[$('filing').value];
+    if($('cited').checked&&!compare){await showCited(accessions);return;}
     const r=await api('/api/ask',{question:$('question').value,scope:{company:$('company').value,accessions,section:$('section').value||null},compare,method:$('method').value});
     $('results').replaceChildren();
     if(r.status==='abstained'){

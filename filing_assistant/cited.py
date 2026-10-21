@@ -6,6 +6,7 @@ rejects (and abstains on) any answer that cites a passage it was not given,
 quotes text that is not verbatim in the cited passage, or states a number that
 appears in none of its quotes. Nothing the model writes is served unchecked.
 """
+import importlib.util
 import json
 import re
 import time
@@ -36,7 +37,9 @@ class Retrieval:
         corpus = Path(corpus) if corpus else None
         lsa = corpus/'data/semantic.json.gz' if corpus else None
         self.lsa = Retriever(index, lsa) if lsa and lsa.exists() else None
-        self.dense = DenseRetriever(index, corpus/'data', dense_encoder) if corpus and (corpus/'data/dense.json').exists() else None
+        # Dense needs the embedding package at query time; without it, fall back to BM25/LSA.
+        usable = dense_encoder is not None or importlib.util.find_spec('fastembed') is not None
+        self.dense = DenseRetriever(index, corpus/'data', dense_encoder) if usable and corpus and (corpus/'data/dense.json').exists() else None
 
     def scoped(self, scope):
         tickers = {p['ticker'] for p in self.index['passages']}
