@@ -2,7 +2,19 @@
 
 Question answering over SEC 10-K and 10-Q filings that cites exact source passages or abstains. Version 3 adds Strategy (MSTR), BitMine (BMNR) and Coinbase (COIN) filings, a pretrained embedding retriever, and an LLM answer layer whose every quote is checked against the source before it is shown.
 
-## Results (v3, held-out)
+## Results
+
+- **Checked LLM answers:** with Claude Haiku 5.5 as the writer, 26/30 answerable held-out questions answered correctly and 10/10 unanswerable ones abstained; every served quote is verbatim from its cited passage because the checker runs before display.
+- **Retrieval:** bge-small embeddings fused with BM25 put a gold passage first for 27/30 held-out questions (MRR@5 0.900), against 23/30 for BM25 alone.
+- **Corpus:** 2,534 narrative passages from the latest 10-K and following 10-Q of Strategy, BitMine and Coinbase, fetched from EDGAR and pinned by SHA-256.
+- **No-key fallback:** the extractive writer answers 16/30 correctly at $0; the v2 extractive tool over Docusign and Albany filings returns complete gold evidence for 18/20 answerable questions and abstains on 10/10 unsupported ones.
+- **Limits:** 40 held-out questions, one run per writer, and questions and labels written by the Claude Code agent that built the system, not reviewed by a human.
+
+**How it works:** scope to one filing, retrieve the top 5 passages, make one LLM call that must return quotes from those passages or abstain, then a deterministic checker rejects any quote that is not verbatim and any number that is not quoted.
+
+**Run the tests:** `python3 -m unittest discover -s tests -q` (108 tests, standard library only)
+
+## Evaluation detail (v3, held-out)
 
 40 questions about the six treasury-company filings (30 answerable, 10 unanswerable), frozen before any generator run. **Questions, gold passages, reference answers and correctness labels are author-written by the Claude Code agent that built this; none were reviewed by a human.** Full tables, definitions and every failure: [evaluation/treasury/REPORT.md](evaluation/treasury/REPORT.md).
 
