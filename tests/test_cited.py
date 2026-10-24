@@ -1,11 +1,12 @@
 import hashlib
+import importlib.util
 import json
 import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
 from filing_assistant.cited import Retrieval, answer, check, numbers, parse, prompt
-from filing_assistant.dense import DenseRetriever, build_dense, fuse
+from filing_assistant.dense import DenseRetriever, FastEmbedEncoder, build_dense, fuse, normalize
 from filing_assistant.providers import AnthropicProvider, ClaudeCliProvider, ExtractiveProvider, OllamaProvider, make_provider
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -165,6 +166,27 @@ class DenseTests(unittest.TestCase):
         dense = DenseRetriever(index, ROOT/'corpora/treasury/data', HashEncoder())
         self.assertEqual(len(dense.vectors), len(index['passages']))
         self.assertEqual(dense.meta['model'], 'BAAI/bge-small-en-v1.5')
+
+
+@unittest.skipUnless(importlib.util.find_spec('fastembed'), 'needs the embed extra: pip install -e ".[embed]"')
+class RealEmbeddingModelTests(unittest.TestCase):
+    """Runs the real bge-small model (downloaded on first use; set FASTEMBED_CACHE_PATH to reuse it)."""
+    @classmethod
+    def setUpClass(cls):
+        cls.directory = ROOT/'corpora/treasury/data'
+        cls.index = json.loads((cls.directory/'index.json').read_text())
+        cls.dense = DenseRetriever(cls.index, cls.directory, FastEmbedEncoder())
+
+    def test_model_reproduces_committed_passage_vectors(self):
+        for passage in self.index['passages'][:3]:
+            vector = normalize(self.dense.encoder.encode([passage['text']])[0])
+            stored = self.dense.vectors[passage['passage_id']]
+            self.assertGreater(sum(a*b for a, b in zip(vector, stored)), 0.99, passage['passage_id'])
+
+    def test_real_query_ranks_the_holdings_passage_first(self):
+        candidates = [p for p in self.index['passages'] if p.get('company') == 'MSTR'] or self.index['passages']
+        top = self.dense.rank(candidates, 'How many bitcoins did Strategy hold as of July 24, 2026?')[0]['passage']
+        self.assertIn('bitcoin', top['text'].lower())
 
 
 class ProviderTests(unittest.TestCase):

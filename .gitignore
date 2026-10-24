@@ -10,3 +10,4 @@ refreshed-sec-corpus/
 .venv/
 .DS_Store
 .venv*/
+.fastembed-cache/
