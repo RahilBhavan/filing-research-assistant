@@ -119,6 +119,16 @@ class PipelineTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.retrieval.rank('bitcoin', dict(company='TST'), method)
 
+    def test_missing_embedding_package_is_named(self):
+        with tempfile.TemporaryDirectory() as temp:
+            data = Path(temp)/'data'
+            data.mkdir()
+            build_dense(mini_index(), data, HashEncoder())
+            retrieval = Retrieval(mini_index(), temp)
+            retrieval.dense = None  # what Retrieval holds when fastembed is not installed
+            with self.assertRaisesRegex(ValueError, 'embedding package'):
+                retrieval.rank('bitcoin', dict(company='TST'), 'dense-hybrid')
+
     def test_prompt_lists_passage_ids(self):
         self.assertIn('[passage_id: a1]', prompt('q', [dict(P1, company='C', form='10-Q', report_period='r', section='mda')]))
 
