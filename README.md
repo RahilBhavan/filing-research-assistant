@@ -21,7 +21,7 @@ Held-out results for v3: 40 questions about the six treasury-company filings, 30
 - Every served quote is verbatim, because the checker runs before display. Haiku attempted 27 answers and 26 passed the checker (`evaluation/treasury/runs/heldout-haiku-cli.jsonl`).
 - bge-small embeddings fused with BM25 put a gold passage first for 27/30 answerable questions (MRR@5 0.900). BM25 alone did so for 23/30 (MRR@5 0.811). Source: `evaluation/treasury/heldout-retrieval.json`.
 - Claude Sonnet, a different model from the writer, judged the served answers. It agreed with the author labels on 57 of 58 items across the three writers.
-- The v2 tool over Docusign and Albany calls no LLM. On its 30-question held-out set, BM25 returned complete gold evidence for 18/20 answerable questions, abstained on 10/10 unsupported ones, had 0 false abstentions and quoted 24/24 excerpts exactly. Source: `evaluation/real/heldout-v2-results.json`.
+- The v2 tool over Docusign and Albany calls no LLM. On its 30-question set, BM25 returned complete gold evidence for 18/20 answerable questions, abstained on 10/10 unsupported ones, had 0 false abstentions and quoted 24/24 excerpts exactly. This is a rerun on questions the author had already seen (v1 scored 13/20 on them), so it is not a blind benchmark. Source: `evaluation/real/heldout-v2-results.json`.
 
 The Claude Code agent that built the system also wrote the questions, gold passages and correctness labels. No human reviewed them. See [Scope and limits](#scope-and-limits).
 
@@ -39,13 +39,13 @@ The Claude Code agent that built the system also wrote the questions, gold passa
 You need Python 3.9 or newer. CI tests 3.9 and 3.12. The base package uses only the standard library. The `embed` extra (fastembed) is needed for the default v3 retrieval, and the `llm` extra (anthropic) for the Anthropic writer.
 
 ```sh
-python3 -m venv .venv && .venv/bin/pip install -e ".[embed,llm]"
+python3 -m venv .venv && .venv/bin/pip install -c requirements-lock.txt -e ".[embed,llm]"
 python3 -m unittest discover -s tests -q
 ```
 
-The test suite ran 108 tests, all passing, on Python 3.14.
+`requirements-lock.txt` pins the versions the tests ran with on Python 3.14.7. The suite ran 109 tests, all passing, with and without the extras installed. They need no network or API key.
 
-Ask one question from the command line. This uses the extractive writer unless `ANTHROPIC_API_KEY` is set. The Anthropic writer bills that key.
+Ask one question from the command line. This uses the extractive writer unless `ANTHROPIC_API_KEY` is set. The Anthropic writer bills that key. The first dense retrieval downloads the bge-small model from Hugging Face. For a fully offline path, add `--method bm25`, or use the v2 corpus (`--corpus corpora/sec ask ...`), which needs only the standard library.
 
 ```sh
 .venv/bin/python -m filing_assistant --corpus corpora/treasury answer \
