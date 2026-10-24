@@ -1,5 +1,7 @@
 # Completion and release plan
 
+> Historical plan from September 2026 for the v2 release. The current state is in [README.md](README.md).
+
 Started September 22, 2026.
 
 ## 1. Correctness
