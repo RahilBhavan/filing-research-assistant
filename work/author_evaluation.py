@@ -1,6 +1,8 @@
 """Source-authored labels frozen before retrieval development. Do not regenerate after tuning."""
 from pathlib import Path
-import json,hashlib,datetime
+import json
+import hashlib
+import datetime
 ROOT=Path(__file__).resolve().parents[1]
 ps=json.loads((ROOT/'corpora/sec/data/index.json').read_text())['passages']; byid={p['passage_id']:p for p in ps}
 families=[

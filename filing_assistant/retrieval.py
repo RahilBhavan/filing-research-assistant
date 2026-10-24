@@ -4,7 +4,6 @@ import hashlib
 import json
 import math
 from collections import Counter
-from pathlib import Path
 from .engine import Engine, tokens
 
 class Retriever:
