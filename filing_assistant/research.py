@@ -1,6 +1,6 @@
 """Scoped extraction with explicit, conservative answerability checks."""
 import re
-from .engine import Engine, Scope, tokens
+from .engine import Engine, tokens
 from .retrieval import Retriever
 
 QUESTION_FILLER=set('much have had about says say stated disclosed disclosure provide provided proportion share number exact exactly approximately amounts amount called consists consist explain describe basis based according constitute came come used uses use offer offers offering reach served serves serve contributed contribute any section reason reasons rate rates might'.split())

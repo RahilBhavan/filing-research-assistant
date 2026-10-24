@@ -1,5 +1,7 @@
 # Improvement plan
 
+> Historical plan from September 2026 for the v2 tool. Test counts and statuses here are as of that date; the current state is in [README.md](../../README.md).
+
 Started September 21, 2026. Implement all five requested improvements while preserving the original fixture corpus and its regression tests.
 
 1. Capture four real SEC filings for two companies, with original filing URLs, metadata, capture timestamps and hashes. Audit at least 20 passages against source content. Fix demonstrated parsing errors before changing retrieval.
