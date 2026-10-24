@@ -1,6 +1,6 @@
 # Improvement plan
 
-> Historical plan from September 2026 for the v2 tool. Test counts and statuses here are as of that date; the current state is in [README.md](README.md).
+> Historical plan from September 2026 for the v2 tool. Test counts and statuses here are as of that date; the current state is in [README.md](../../README.md).
 
 Started September 21, 2026. Implement all five requested improvements while preserving the original fixture corpus and its regression tests.
 
