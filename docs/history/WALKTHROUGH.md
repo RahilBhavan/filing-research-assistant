@@ -1,4 +1,4 @@
-> Legacy synthetic-fixture walkthrough. For the completed real SEC interface, start with [README.md](README.md) and [the real-source report](evaluation/real/REPORT.md).
+> Legacy synthetic-fixture walkthrough. For the completed real SEC interface, start with [README.md](../../README.md) and [the real-source report](../../evaluation/real/REPORT.md).
 
 # Learn by tracing one answer
 

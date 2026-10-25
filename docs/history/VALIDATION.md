@@ -1,6 +1,6 @@
 # Validation — September 21, 2026 (updated September 23, 2026)
 
-> Validation record for the v2 tool (Docusign and Albany, no LLM) as of September 23, 2026. Counts here describe that version. Since v3, the suite has 108 tests, and v3 benchmarks a pretrained bge-small embedding retriever; see [the v3 report](evaluation/treasury/REPORT.md).
+> Validation record for the v2 tool (Docusign and Albany, no LLM) as of September 23, 2026. Counts here describe that version. Since v3, the suite has 108 tests, and v3 benchmarks a pretrained bge-small embedding retriever; see [the v3 report](../../evaluation/treasury/REPORT.md).
 
 All commands below ran from the project directory unless stated otherwise. The real evaluation is separate from the preserved synthetic benchmark.
 
@@ -28,4 +28,4 @@ Original selected BM25 on held-out data: gold retrieval 19/20; complete gold ans
 
 Independent human semantic-support review was **not performed**. No accuracy claim is based solely on exact string matches. Tables are intentionally excluded. Twenty selected source checks do not establish exhaustive parser accuracy. No paid/pretrained embedding provider was benchmarked: the semantic experiment is local corpus-fitted LSA. The load-test script, SEC refresh workflow, packaging, CI, accessibility checks, and responsive layout checks are now included; CI and live SEC refresh require GitHub execution with network access and a configured `SEC_USER_AGENT` secret.
 
-The original fixture validation remains in `baselines/v1_VALIDATION.md`.
+The original fixture validation remains in `../../baselines/v1_VALIDATION.md`.

@@ -89,7 +89,7 @@ The original parser produced 2,215 passages on these documents, including later 
 - `heldout-results.json`: archival v1 held-out record.
 - `source-audit.json`: complete twenty-passage source comparison.
 - `web-verification.json`: API checks plus hand-recorded browser notes.
-- `../../VALIDATION.md`: commands and exit statuses.
+- `../../docs/history/VALIDATION.md`: commands and exit statuses.
 
 From the project directory: `python3 -m filing_assistant.real_eval dev` and `python3 -m filing_assistant.real_eval heldout-v2` print counts without touching tracked files; add `--write` to regenerate the results JSON, then run `python3 work/build_report.py`. `python3 -m filing_assistant.real_eval heldout` exits 1 with an archival notice. Repeating held-out evaluation reproduces a known result; it does not create a fresh test set. Do not regenerate questions or source index to improve a score.
 

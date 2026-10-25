@@ -39,7 +39,8 @@ class Retrieval:
         self.lsa = Retriever(index, lsa) if lsa and lsa.exists() else None
         # Dense needs the embedding package at query time; without it, fall back to BM25/LSA.
         usable = dense_encoder is not None or importlib.util.find_spec('fastembed') is not None
-        self.dense = DenseRetriever(index, corpus/'data', dense_encoder) if usable and corpus and (corpus/'data/dense.json').exists() else None
+        self.dense_vectors = bool(corpus and (corpus/'data/dense.json').exists())
+        self.dense = DenseRetriever(index, corpus/'data', dense_encoder) if usable and self.dense_vectors else None
 
     def scoped(self, scope):
         tickers = {p['ticker'] for p in self.index['passages']}
@@ -64,6 +65,8 @@ class Retrieval:
             ranked = self.lsa.rank(candidates, terms, 'semantic' if method == 'lsa' else 'hybrid')
         elif method in ('dense', 'dense-hybrid'):
             if not self.dense:
+                if self.dense_vectors:
+                    raise ValueError("Dense retrieval needs the embedding package: pip install -e '.[embed]', or pass --method bm25")
                 raise ValueError('No dense vectors for this corpus')
             dense = self.dense.rank(candidates, question)
             ranked = dense if method == 'dense' else fuse(bm, dense)

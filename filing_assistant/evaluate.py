@@ -97,6 +97,6 @@ def evaluate(root,write=False):
         lines.append('No failed cases in this small development set. This does not establish performance on real filings or unseen questions.')
     for row in failures:
         lines += ['- {}: {} Expected passages: {}. Retrieved: {}. Outcome: {}. Inspect the raw result before changing retrieval.'.format(row['id'],row['question'],', '.join(row['gold_passage_ids']),', '.join(h['passage_id'] for h in row['result']['retrieved']),row['result']['reason'])]
-    lines += ['', 'Further limits: synthetic narrative data, no table answers, no learned embeddings, only explicit scope checks, and heuristic lexical abstention. An exact quote can still be irrelevant to a question. Comparison output juxtaposes passages and does not establish causal or numerical change. See VALIDATION.md for adversarial cases and verification commands.','']
+    lines += ['', 'Further limits: synthetic narrative data, no table answers, no learned embeddings, only explicit scope checks, and heuristic lexical abstention. An exact quote can still be irrelevant to a question. Comparison output juxtaposes passages and does not establish causal or numerical change. See docs/history/VALIDATION.md for adversarial cases and verification commands.','']
     if write:(root/'evaluation/REPORT.md').write_text('\n'.join(lines))
     return report
