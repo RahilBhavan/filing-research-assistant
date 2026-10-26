@@ -1,0 +1,12 @@
+{
+  "frozen_at": "2026-10-26T01:35:58+00:00",
+  "note": "Questions, gold answers and evidence were written and hashed before the system was run on them. The system code is pinned by code_commit. Labels are agent-authored; a human grade is pending.",
+  "code_commit": "58e8fa13350ec65e8f630f7b9f312288d43ab744",
+  "label_origin": "agent authored from the filing text before any run",
+  "human_independent": false,
+  "files": {
+    "evaluation/human-grade-v3/questions.jsonl": "8f8a05caf3f4de957733892cd99ce5203832a4acb41d1e8a88ea2fafd612be1f",
+    "corpora/sec/data/index.json": "bf45b2fff50de6f0a4f7245ecd7c05e137eab0394e32d1fb069e36b9342254df",
+    "corpora/sec/data/manifest.json": "0165b846fc9e95aec52c61ad3f769ed648e26ac0986474e65d4c1468103a26fd"
+  }
+}
