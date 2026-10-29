@@ -3,7 +3,7 @@
   python -m filing_assistant.treasury_eval retrieval [--split dev|heldout] [--write]
   python -m filing_assistant.treasury_eval generate --provider claude-cli --run NAME [--split ...]
   python -m filing_assistant.treasury_eval judge --run NAME            (LLM judge, answered items only)
-  python -m filing_assistant.treasury_eval report [--write]
+  python -m filing_assistant.treasury_eval significance [--write]    (paired CIs and McNemar from committed files)
 
 Retrieval and the checker are deterministic. The judge decides only whether a
 served, checked answer matches the author-written reference; abstentions are
@@ -17,6 +17,7 @@ import sys
 from pathlib import Path
 from .cited import METHODS, Retrieval, answer
 from .providers import ClaudeCliProvider, make_provider
+from .stats import compare
 
 ROOT = Path(__file__).resolve().parents[1]
 CORPUS = ROOT/'corpora/treasury'
@@ -140,6 +141,33 @@ def score(run, split='heldout', labels=None):
         mean_cost_usd=round(sum(costs)/len(costs), 6) if costs else None, total_cost_usd=round(sum(costs), 4) if costs else None)
 
 
+RETRIEVAL_PAIRS = (('dense-hybrid', 'bm25'), ('dense-hybrid', 'dense'), ('dense-hybrid', 'lsa-hybrid'), ('dense-hybrid', 'lsa'))
+WRITER_PAIRS = (('heldout-haiku-cli', 'heldout-extractive'), ('heldout-haiku-cli', 'heldout-ollama-qwen0.5b'), ('heldout-extractive', 'heldout-ollama-qwen0.5b'))
+
+
+def writer_correct(run, split='heldout'):
+    """Per answerable question: 1 if the writer served an answer the judge called correct, else 0 (same rule as score)."""
+    verdicts = json.loads((EVAL/'runs'/(run + '-judge.json')).read_text())
+    served = {json.loads(l)['id']: json.loads(l)['status'] == 'answered' for l in (EVAL/'runs'/(run + '.jsonl')).read_text().splitlines()}
+    return {r['id']: int(served[r['id']] and verdicts.get(r['id'], {}).get('verdict') == 'correct') for r in load(split) if r['answerable']}
+
+
+def significance(split='heldout'):
+    """Paired bootstrap intervals and exact McNemar tests over committed retrieval and judge files. Calls no model."""
+    report = json.loads((EVAL/(split + '-retrieval.json')).read_text())
+    ranks = {m: {q['id']: q['first_gold_rank'] for q in r['per_question']} for m, r in report.items()}
+    ids = sorted(ranks['bm25'])
+    metrics = {'top1': lambda rank: int(rank == 1), 'mrr5': lambda rank: 1/rank if rank else 0.0}
+    out = dict(split=split, questions=len(ids), retrieval={}, writers={})
+    for a, b in RETRIEVAL_PAIRS:
+        out['retrieval'][a + ' vs ' + b] = {name: compare([f(ranks[a][i]) for i in ids], [f(ranks[b][i]) for i in ids]) for name, f in metrics.items()}
+    correct = {run: writer_correct(run, split) for pair in WRITER_PAIRS for run in pair}
+    for a, b in WRITER_PAIRS:
+        order = sorted(correct[a])
+        out['writers'][a + ' vs ' + b] = dict(judge_correct=compare([correct[a][i] for i in order], [correct[b][i] for i in order]))
+    return out
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest='command', required=True)
@@ -148,6 +176,7 @@ def main(argv=None):
     g.add_argument('--split', default='heldout'); g.add_argument('--method', default='dense-hybrid', choices=METHODS); g.add_argument('--limit', type=int)
     j = sub.add_parser('judge'); j.add_argument('--run', required=True); j.add_argument('--split', default='heldout')
     s = sub.add_parser('score'); s.add_argument('--run', required=True); s.add_argument('--split', default='heldout')
+    z = sub.add_parser('significance'); z.add_argument('--split', default='heldout'); z.add_argument('--write', action='store_true')
     args = p.parse_args(argv)
     if args.command == 'retrieval':
         report = retrieval_eval(args.split)
@@ -160,6 +189,11 @@ def main(argv=None):
         print(json.dumps(judge(args.run, split=args.split), indent=1))
     elif args.command == 'score':
         print(json.dumps(score(args.run, args.split), indent=1))
+    elif args.command == 'significance':
+        report = significance(args.split)
+        if args.write:
+            (EVAL/(args.split + '-significance.json')).write_text(json.dumps(report, indent=1) + '\n')
+        print(json.dumps(report, indent=1))
     return 0
 
 
