@@ -13,7 +13,7 @@ CONFIDENCE = 0.95
 
 
 def mean(values):
-    return sum(values)/len(values)
+    return math.fsum(values)/len(values)  # fsum is exact; plain sum() differs in the last digits across Python versions
 
 
 def paired_bootstrap_ci(a, b, seed=SEED, resamples=RESAMPLES, confidence=CONFIDENCE):
@@ -26,7 +26,7 @@ def paired_bootstrap_ci(a, b, seed=SEED, resamples=RESAMPLES, confidence=CONFIDE
     draws = []
     for _ in range(resamples):
         # random() rather than randrange/choices: its stream is stable across Python versions.
-        total = sum(diffs[int(rng.random()*n)] for _ in range(n))
+        total = math.fsum(diffs[int(rng.random()*n)] for _ in range(n))
         draws.append(round(total/n, 12))  # rounding keeps float noise from straddling an exact zero
     draws.sort()
     tail = (1 - confidence)/2
