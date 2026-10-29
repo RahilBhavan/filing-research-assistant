@@ -49,9 +49,31 @@ Definitions:
 - `heldout-extractive`: Model-free sentence picker; incorrect items quote a real sentence that does not answer the question or omits an asked part.
 - Judge/author disagreement `heldout-ollama-qwen0.5b/t19`: judge said correct ("The answer states $122.4 million for the three months ended June 30, 2026, matching the reference; the $246.7 million is the six-month figure and is clearly the extra detail, though phrased ambiguously."); author said incorrect.
 
+## Are the gaps real? Paired intervals and exact tests
+
+Computed by `python -m filing_assistant.treasury_eval significance --write` from the committed retrieval and judge files (`heldout-significance.json`). No model is called. The 30 answerable questions are paired: each system sees the same ones. The interval is a 95% percentile paired bootstrap of the mean difference (10000 resamples of questions, seed 20261029). McNemar is the exact two-sided test on the questions where exactly one system was right, shown as p (questions only the first system got right vs only the second).
+
+| Metric | Comparison | Scores | Difference | 95% CI | McNemar p (only-first vs only-second) | Interval |
+|---|---|---|---|---|---|---|
+| Retrieval, top-1 hit | bge-small + BM25 vs BM25 | 0.90 vs 0.77 | +0.13 | [+0.03, +0.27] | 0.125 (4 vs 0) | excludes zero, but McNemar p > 0.05 |
+| Retrieval, top-1 hit | bge-small + BM25 vs bge-small alone | 0.90 vs 0.73 | +0.17 | [+0.03, +0.30] | 0.0625 (5 vs 0) | excludes zero, but McNemar p > 0.05 |
+| Retrieval, top-1 hit | bge-small + BM25 vs LSA + BM25 | 0.90 vs 0.63 | +0.27 | [+0.13, +0.43] | 0.00781 (8 vs 0) | excludes zero |
+| Retrieval, top-1 hit | bge-small + BM25 vs LSA | 0.90 vs 0.53 | +0.37 | [+0.20, +0.53] | 0.000977 (11 vs 0) | excludes zero |
+| Retrieval, MRR@5 | bge-small + BM25 vs BM25 | 0.900 vs 0.811 | +0.089 | [+0.017, +0.183] | n/a (graded score) | excludes zero |
+| Retrieval, MRR@5 | bge-small + BM25 vs bge-small alone | 0.900 vs 0.825 | +0.075 | [+0.000, +0.167] | n/a (graded score) | includes zero |
+| Retrieval, MRR@5 | bge-small + BM25 vs LSA + BM25 | 0.900 vs 0.729 | +0.171 | [+0.066, +0.293] | n/a (graded score) | excludes zero |
+| Retrieval, MRR@5 | bge-small + BM25 vs LSA | 0.900 vs 0.626 | +0.274 | [+0.127, +0.429] | n/a (graded score) | excludes zero |
+| Writer, judge-correct | Haiku vs Extractive | 0.87 vs 0.53 | +0.33 | [+0.17, +0.50] | 0.00195 (10 vs 0) | excludes zero |
+| Writer, judge-correct | Haiku vs qwen2.5:0.5b | 0.87 vs 0.23 | +0.63 | [+0.47, +0.80] | 3.81e-06 (19 vs 0) | excludes zero |
+| Writer, judge-correct | Extractive vs qwen2.5:0.5b | 0.53 vs 0.23 | +0.30 | [+0.10, +0.50] | 0.0225 (11 vs 2) | excludes zero |
+
+- Retrieval compares bge-small + BM25 (used for generation) with each other method; writers are compared on judge-correct answers (abstaining counts as wrong). Each cell is a separate test with no multiple-comparison correction.
+- A bootstrap interval on 30 questions with few disagreements is narrow and optimistic. Where it excludes zero but McNemar p > 0.05 (fused vs BM25 top-1: 4 questions better, 0 worse, p = 0.125), read the gap as suggestive, not established.
+- Intervals describe sampling noise over these 30 author-written questions only. They say nothing about label errors or about other question sets.
+
 ## Limits
 
-- 40 questions is small: one question moves a rate by 2.5–3.3 points. No confidence intervals are claimed.
+- 40 questions is small: one question moves a rate by 2.5–3.3 points. Paired intervals and exact tests are in the section above; the fused-vs-BM25 top-1 gap and the fused-vs-dense gaps are not firmly separated from zero.
 - Questions, gold passages, reference answers and correctness labels were all written by the same agent that built the system. None were reviewed by a human.
 - Single run per writer. Haiku output is not sampled deterministically, so a rerun can differ.
 - The checker proves quotes are verbatim and numbers are quoted. It does not prove the answer is relevant (qwen t17), that the quotes support a claim written in words (qwen t01), or that non-numeric entities are quoted (Haiku t08).

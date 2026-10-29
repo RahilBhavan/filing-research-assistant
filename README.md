@@ -19,7 +19,8 @@ Held-out v3 results: 40 questions, 30 answerable and 10 unanswerable, frozen bef
 | qwen2.5:0.5b, local through Ollama | 7/30 | 10/10 | 22/30 | 1.15 s | $0 |
 
 - Every served quote is verbatim, because the checker runs before display. Haiku's misses and abstentions are listed in the report.
-- bge-small embeddings fused with BM25 put a gold passage first for 27/30 answerable questions (MRR@5 0.900); BM25 alone did so for 23/30 (`evaluation/treasury/heldout-retrieval.json`).
+- bge-small embeddings fused with BM25 put a gold passage first for 27/30 answerable questions (MRR@5 0.900); BM25 alone did so for 23/30 (MRR@5 0.811) (`evaluation/treasury/heldout-retrieval.json`). This gap is suggestive, not established: fused won 4 questions and lost none, the exact McNemar p is 0.125, and the 95% bootstrap interval for the top-1 difference (+0.03 to +0.27) rests on those 4 questions. The MRR@5 interval against plain bge-small alone (0.900 vs 0.825) reaches zero.
+- The writer gaps are larger than the noise on these 30 questions: Haiku beat the extractive writer on 10 questions and lost none (McNemar p = 0.002, 95% interval for the difference +0.17 to +0.50), and extractive beat qwen on 11 and lost 2 (p = 0.022, +0.10 to +0.50). Paired bootstrap intervals and exact tests for every comparison, recomputed from the committed files with no model call, are in [the report](evaluation/treasury/REPORT.md#are-the-gaps-real-paired-intervals-and-exact-tests); they say nothing about whether the author's labels are right.
 - Claude Sonnet judged the served answers and agreed with the author labels on 57 of 58 items.
 - The v2 tool (no LLM) returned complete gold evidence for 18/20 answerable questions, abstained on 10/10 unsupported ones and quoted 24/24 excerpts exactly. The author had already seen these questions, so it is not a blind benchmark (`evaluation/real/heldout-v2-results.json`).
 
@@ -70,7 +71,7 @@ python3 -m venv .venv && .venv/bin/pip install -c requirements-lock.txt -e ".[em
 python3 -m unittest discover -s tests -q
 ```
 
-`requirements-lock.txt` pins the versions used on Python 3.14.7. The suite ran 129 tests, all passing; without the extras, 2 real-model tests skip. No API key is needed.
+`requirements-lock.txt` pins the versions used on Python 3.14.7. The suite ran 142 tests, all passing; without the extras, 2 real-model tests skip. No API key is needed.
 
 Ask one question. This uses the extractive writer unless `ANTHROPIC_API_KEY` is set, which the Anthropic writer bills. The first dense retrieval downloads the bge-small model; for a fully offline path, add `--method bm25`.
 
@@ -93,6 +94,7 @@ Retrieval and v2 evaluation runs are deterministic and leave tracked files uncha
 .venv/bin/python -m filing_assistant.treasury_eval retrieval --split heldout
 .venv/bin/python -m filing_assistant.treasury_eval generate --run my-run --provider extractive   # or anthropic, claude-cli, ollama
 .venv/bin/python -m filing_assistant.treasury_eval score --run my-run   # after `judge --run my-run`
+.venv/bin/python -m filing_assistant.treasury_eval significance   # paired CIs and McNemar from committed files, no model call
 python3 -m filing_assistant.real_eval heldout-v2
 ```
 
@@ -129,7 +131,7 @@ All filings come from SEC EDGAR.
 ## Scope and limits
 
 - Independent portfolio project, not affiliated with any company named here or Anthropic.
-- The v3 evaluation is small: 40 held-out questions, one run per writer. One question moves a rate by about 3 points.
+- The v3 evaluation is small: 40 held-out questions, one run per writer. One question moves a rate by about 3 points. Paired intervals are reported, and the fused-vs-BM25 retrieval gap is not statistically settled at this size.
 - The agent that built the system wrote all questions, gold passages and labels. No human has reviewed them; the human-graded check on the fresh set is pending.
 - The Haiku run used the Claude Code CLI because no API key was available. The `anthropic` provider is covered by unit tests only.
 - The checker verifies quotes and digits, not entities, counts written as words or relevance. A verbatim quote can still give a wrong answer.
