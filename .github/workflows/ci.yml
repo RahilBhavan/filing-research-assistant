@@ -45,7 +45,10 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.9", "3.12"]
-    runs-on: ubuntu-latest
+    # Python 3.9 is end-of-life and actions/python-versions publishes no 3.9 build for
+    # Ubuntu 26.04 (what ubuntu-latest now is), so pin the last image that has it. setup.cfg
+    # still declares python_requires >=3.9, so this keeps the floor tested.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
